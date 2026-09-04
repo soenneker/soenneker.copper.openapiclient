@@ -2886,7 +2886,20 @@
             }
           }
         ],
-        "responses": { }
+        "responses": {
+          "200": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "DefaultResponse",
+                  "type": "object",
+                  "description": "Default response schema"
+                }
+              }
+            }
+          }
+        }
       },
       "put": {
         "tags": [
@@ -15687,7 +15700,20 @@
             }
           }
         },
-        "responses": { },
+        "responses": {
+          "201": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "DefaultResponse",
+                  "type": "object",
+                  "description": "Default response schema"
+                }
+              }
+            }
+          }
+        },
         "servers": [
           {
             "url": "https://ali-userassets-production.s3.amazonaws.com"

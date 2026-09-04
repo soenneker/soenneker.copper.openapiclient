@@ -177,22 +177,22 @@ namespace Soenneker.Copper.OpenApiClient
         /// <summary>
         /// This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.PostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostRootPlainRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.PostResponse?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostRootPlainRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostRootPlainRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.PostResponse> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostRootPlainRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.PostResponse>(requestInfo, global::Soenneker.Copper.OpenApiClient.PostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
@@ -212,6 +212,7 @@ namespace Soenneker.Copper.OpenApiClient
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "text/plain", body);
             return requestInfo;
         }

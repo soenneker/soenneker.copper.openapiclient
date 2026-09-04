@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "67709CB5DF6213C81A7741CC1C9FA51551B57BBC5FE8B89DBE81B27A3AA9F638673F5B9B4DC39F61D0E592D78CC340E398B2B348CE37545A539F6A5F6E14DD80",
+  "descriptionHash": "78252B7E80B5C911792A13C097D2ED8F3731D1DCA9BB86E191AC8A6A5B1FB47A30C0987A8EA4B938947539FD5183A46BCE43614AA484F4B2816AF5043C08577A",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "CopperOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Copper.OpenApiClient",
