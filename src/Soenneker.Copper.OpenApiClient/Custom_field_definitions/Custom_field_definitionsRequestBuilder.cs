@@ -47,45 +47,46 @@ namespace Soenneker.Copper.OpenApiClient.Custom_field_definitions
         {
         }
         /// <summary>
-        /// Custom Field Definitions specify account specific fields not included as part of the standard resource fields and allows Copper to be customized to your specific workflow. The Custom Field Definitions API allows you to retrieve the list of Custom Field Definitions associated with your Copper account.
+        /// Custom Field Definitions specify account specific fields not included as part of the standard resource fields and allows Copper to be customized to your specific workflow. The Custom Field Definitions API allows you to retrieve the list of Custom Field Definitions associated with your Copper account.|   Field   |     Type      |                                                                            Details                                                                             || --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- || id        | number        | Unique identifier for the custom field definition.                                                                                                            || name      | string        | Label for the custom field definition                                                                                                                          || data_type | string enum   | The type of data that should be stored within this custom field. Possible values are: String, Text, Dropdown, Date, Checkbox, Float, URL, Percentage, Currency, Connect || currency  | string enum   | The currency used for this custom field definition. Valid only when the data type is Currency.                                                                 || options   | options array | A list of possible dropdown options. Valid only when the data type is Dropdown.                                                                                |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Copper.OpenApiClient.Models.ListCustomFieldDefinitions200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListCustomFieldDefinitions200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListCustomFieldDefinitions200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListCustomFieldDefinitions200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListCustomFieldDefinitions200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a new custom field definition
+        /// | Field                 | Type          | Details | Default || --------------------- | ------------- | ----------------------- | ---------------------- || name*              | string | Name of the Custom Field Definition                     |                      || data_type*                  | string | One of the following strings: &quot;Checkbox&quot;, &quot;Currency&quot;, “Date&quot;, &quot;Dropdown&quot;, &quot;Float&quot;, &quot;MultiSelect&quot;, &quot;Percentage&quot;, “String&quot;, &quot;Text&quot;, &quot;URL&quot; |                      || available_on              | string array       | List of strings containing one or more of the following: “lead”, “person”, “opportunity”, “company”, &quot;project&quot;, &quot;task&quot;                      |                      || options          | integer array       | Array of options for Dropdown and MultiSelect fields.  A minimum of one option is required for Dropdown and a minimum of 2 options is required for MultiSelect                      |                      || currency            | string | 3-letter country code (e.g., &quot;USD&quot;, &quot;CAD&quot;)                     |                      ||\* indicates a required field| | |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinition200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostCustomFieldDefinitionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinition200Response?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinitionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostCustomFieldDefinitionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinition200Response> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinitionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinition200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Custom Field Definitions specify account specific fields not included as part of the standard resource fields and allows Copper to be customized to your specific workflow. The Custom Field Definitions API allows you to retrieve the list of Custom Field Definitions associated with your Copper account.
+        /// Custom Field Definitions specify account specific fields not included as part of the standard resource fields and allows Copper to be customized to your specific workflow. The Custom Field Definitions API allows you to retrieve the list of Custom Field Definitions associated with your Copper account.|   Field   |     Type      |                                                                            Details                                                                             || --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- || id        | number        | Unique identifier for the custom field definition.                                                                                                            || name      | string        | Label for the custom field definition                                                                                                                          || data_type | string enum   | The type of data that should be stored within this custom field. Possible values are: String, Text, Dropdown, Date, Checkbox, Float, URL, Percentage, Currency, Connect || currency  | string enum   | The currency used for this custom field definition. Valid only when the data type is Currency.                                                                 || options   | options array | A list of possible dropdown options. Valid only when the data type is Dropdown.                                                                                |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,28 +101,28 @@ namespace Soenneker.Copper.OpenApiClient.Custom_field_definitions
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custom field definition
+        /// | Field                 | Type          | Details | Default || --------------------- | ------------- | ----------------------- | ---------------------- || name*              | string | Name of the Custom Field Definition                     |                      || data_type*                  | string | One of the following strings: &quot;Checkbox&quot;, &quot;Currency&quot;, “Date&quot;, &quot;Dropdown&quot;, &quot;Float&quot;, &quot;MultiSelect&quot;, &quot;Percentage&quot;, “String&quot;, &quot;Text&quot;, &quot;URL&quot; |                      || available_on              | string array       | List of strings containing one or more of the following: “lead”, “person”, “opportunity”, “company”, &quot;project&quot;, &quot;task&quot;                      |                      || options          | integer array       | Array of options for Dropdown and MultiSelect fields.  A minimum of one option is required for Dropdown and a minimum of 2 options is required for MultiSelect                      |                      || currency            | string | 3-letter country code (e.g., &quot;USD&quot;, &quot;CAD&quot;)                     |                      ||\* indicates a required field| | |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostCustomFieldDefinitionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinitionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostCustomFieldDefinitionsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.CreateANewCustomFieldDefinitionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

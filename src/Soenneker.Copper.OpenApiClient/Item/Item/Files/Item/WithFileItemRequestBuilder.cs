@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Copper.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -33,25 +34,25 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files.Item
         {
         }
         /// <summary>
-        /// This API endpoint gets the detailed metadata for a file for a given entity type and id and the file id. File id can be found using the &quot;List attached files of an entity record&quot;,where {{entity_type}}, {{entity_id}}, and {{file_id}} are replaced with the following:
+        /// This API endpoint gets the detailed metadata for a file for a given entity type and id and the file id. File id can be found using the &quot;List attached files of an entity record&quot;,where {{entity_type}}, {{entity_id}}, and {{file_id}} are replaced with the following:|           Field           |    Type     |                                    Details                                    | Default || ------------------------- | ----------- | ----------------------------------------------------------------------------- | ------- || entity_type*              | string      | Must be one of: &quot;leads&quot;, &quot;people&quot;, &quot;opportunities&quot;, &quot;companies&quot;, &quot;projects&quot;   |         || entity_id*                | number      | ID of the entity record                                                       |         || file_id*                  | number      | ID of the attached file                                                       |         || \* indicates a required field ||||
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.GetMetadataOfASpecificAttachedFile200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.GetMetadataOfASpecificAttachedFile200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.GetMetadataOfASpecificAttachedFile200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.GetMetadataOfASpecificAttachedFile200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.GetMetadataOfASpecificAttachedFile200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API endpoint gets the detailed metadata for a file for a given entity type and id and the file id. File id can be found using the &quot;List attached files of an entity record&quot;,where {{entity_type}}, {{entity_id}}, and {{file_id}} are replaced with the following:
+        /// This API endpoint gets the detailed metadata for a file for a given entity type and id and the file id. File id can be found using the &quot;List attached files of an entity record&quot;,where {{entity_type}}, {{entity_id}}, and {{file_id}} are replaced with the following:|           Field           |    Type     |                                    Details                                    | Default || ------------------------- | ----------- | ----------------------------------------------------------------------------- | ------- || entity_type*              | string      | Must be one of: &quot;leads&quot;, &quot;people&quot;, &quot;opportunities&quot;, &quot;companies&quot;, &quot;projects&quot;   |         || entity_id*                | number      | ID of the entity record                                                       |         || file_id*                  | number      | ID of the attached file                                                       |         || \* indicates a required field ||||
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files.Item
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             return requestInfo;
         }
         /// <summary>

@@ -34,44 +34,44 @@ namespace Soenneker.Copper.OpenApiClient.Leads.Item.ConvertNamespace
         {
         }
         /// <summary>
-        /// This request creates a Person record from a Lead record. Optionally, a Company and an Opportunity record can be created as well in the same process. The Lead record is removed after it has been converted.
+        /// This request creates a Person record from a Lead record. Optionally, a Company and an Opportunity record can be created as well in the same process. The Lead record is removed after it has been converted.| Field       | Type   | Details || -----       | ----   | ------- || person      | object | Details about the Person to be created by the Lead conversion. Valid fields are name, contact_type_id, and assignee_id.| company     | object | Details about the Company to which the newly created Person will belong. Valid fields are id or name, and they are mutually exclusive. If a Company id is specified, the new Person will belong to that Company. If the name of an existing Company is specified, the new Person will belong to that Company. If a new name is specified, a new Company will be created with that name, and the new Person will belong to that Company. If you explicitly supply an empty string (&quot;&quot;) for the company name, then no Company will be created. By default, fuzzy matching will return a list of candidate companies. An optional Boolean field &quot;exact_match&quot; can be specified if the exact company name is known.| opportunity | object | Details about the Opportunity to be created by the Lead conversion. Valid fields are name, pipeline_id, pipeline_stage_id, monetary_value, and assignee_id. If unspecified, no Opportunity will be created. If pipeline_stage_id is unspecified, it will default to the first stage in the pipeline. |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.ConvertaLead200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostLeadsByExampleLeadconvertIdConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.ConvertaLead200Response?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostLeadsByExampleLeadconvertIdConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.ConvertaLead200Response> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.ConvertaLead200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ConvertaLead200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This request creates a Person record from a Lead record. Optionally, a Company and an Opportunity record can be created as well in the same process. The Lead record is removed after it has been converted.
+        /// This request creates a Person record from a Lead record. Optionally, a Company and an Opportunity record can be created as well in the same process. The Lead record is removed after it has been converted.| Field       | Type   | Details || -----       | ----   | ------- || person      | object | Details about the Person to be created by the Lead conversion. Valid fields are name, contact_type_id, and assignee_id.| company     | object | Details about the Company to which the newly created Person will belong. Valid fields are id or name, and they are mutually exclusive. If a Company id is specified, the new Person will belong to that Company. If the name of an existing Company is specified, the new Person will belong to that Company. If a new name is specified, a new Company will be created with that name, and the new Person will belong to that Company. If you explicitly supply an empty string (&quot;&quot;) for the company name, then no Company will be created. By default, fuzzy matching will return a list of candidate companies. An optional Boolean field &quot;exact_match&quot; can be specified if the exact company name is known.| opportunity | object | Details about the Opportunity to be created by the Lead conversion. Valid fields are name, pipeline_id, pipeline_stage_id, monetary_value, and assignee_id. If unspecified, no Opportunity will be created. If pipeline_stage_id is unspecified, it will default to the first stage in the pipeline. |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostLeadsByExampleLeadconvertIdConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostLeadsByExampleLeadconvertIdConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

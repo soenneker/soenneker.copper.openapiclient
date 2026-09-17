@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Copper.OpenApiClient.Models;
 using Soenneker.Copper.OpenApiClient.Pipeline_stages.Pipeline;
 using System.Collections.Generic;
 using System.IO;
@@ -39,25 +40,26 @@ namespace Soenneker.Copper.OpenApiClient.Pipeline_stages
         {
         }
         /// <summary>
-        /// Pipeline Stages define the positions of Opportunities within their Pipelines. The Pipeline Stages API allows you to retrieve the list of Pipeline Stages associated with your Copper account.
+        /// Pipeline Stages define the positions of Opportunities within their Pipelines. The Pipeline Stages API allows you to retrieve the list of Pipeline Stages associated with your Copper account.|          Field           |                                                     Details                                                      || ------------------------ | ---------------------------------------------------------------------------------------------------------------- || id (number)              | Unique identifier for the Pipeline Stage.                                                                        || name (string)            | The name of the Pipeline Stage.                                                                                  || pipeline_id (number)     | The unique identifier of the Pipeline in which this Pipeline Stage is.                                           || win_probability (number) | The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100] (inclusive). |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
-        /// Pipeline Stages define the positions of Opportunities within their Pipelines. The Pipeline Stages API allows you to retrieve the list of Pipeline Stages associated with your Copper account.
+        /// Pipeline Stages define the positions of Opportunities within their Pipelines. The Pipeline Stages API allows you to retrieve the list of Pipeline Stages associated with your Copper account.|          Field           |                                                     Details                                                      || ------------------------ | ---------------------------------------------------------------------------------------------------------------- || id (number)              | Unique identifier for the Pipeline Stage.                                                                        || name (string)            | The name of the Pipeline Stage.                                                                                  || pipeline_id (number)     | The unique identifier of the Pipeline in which this Pipeline Stage is.                                           || win_probability (number) | The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100] (inclusive). |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +74,7 @@ namespace Soenneker.Copper.OpenApiClient.Pipeline_stages
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             return requestInfo;
         }
         /// <summary>

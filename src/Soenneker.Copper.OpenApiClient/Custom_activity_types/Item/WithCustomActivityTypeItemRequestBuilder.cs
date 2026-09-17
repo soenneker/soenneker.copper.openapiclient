@@ -36,40 +36,40 @@ namespace Soenneker.Copper.OpenApiClient.Custom_activity_types.Item
         /// <summary>
         /// Get Custom Activity Type
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.GetCustomActivityType200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.GetCustomActivityType200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.GetCustomActivityType200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.GetCustomActivityType200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.GetCustomActivityType200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an Existing Custom Activity Type
+        /// |   Field                     | Type   |  Details  |  Default  || --------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | - || name                        | string | Name of the custom activity type.                                                                                                              |   || icon_type                   | string | Icon Type. Must be one of: &quot;Message&quot;, &quot;Phone&quot;, &quot;Event&quot;, &quot;Assignment&quot;, &quot;Assessment&quot;, &quot;Group&quot;, &quot;Description&quot;, &quot;Speaker Notes&quot;, &quot;Forum&quot;, &quot;Web&quot;, &quot;Loyalty&quot;, &quot;Content Paste&quot;, &quot;Headset&quot;, &quot;Share&quot;, &quot;Navigation&quot;, &quot;Notification&quot;, &quot;Voicemail&quot;, &quot;Room&quot;, &quot;Edit&quot;, &quot;Send&quot;, &quot;Videocam&quot;, &quot;Play Arrow&quot;, &quot;Grocery Store&quot;, &quot;Mic&quot;, &quot;Camera Mic&quot;, &quot;Todo&quot; | |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityType200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.PutCustomActivityTypesByCustomActivityTypeIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityType200Response?> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityTypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.PutCustomActivityTypesByCustomActivityTypeIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityType200Response> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityTypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityType200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityType200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Custom Activity Type
@@ -87,28 +87,28 @@ namespace Soenneker.Copper.OpenApiClient.Custom_activity_types.Item
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             return requestInfo;
         }
         /// <summary>
-        /// Update an Existing Custom Activity Type
+        /// |   Field                     | Type   |  Details  |  Default  || --------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | - || name                        | string | Name of the custom activity type.                                                                                                              |   || icon_type                   | string | Icon Type. Must be one of: &quot;Message&quot;, &quot;Phone&quot;, &quot;Event&quot;, &quot;Assignment&quot;, &quot;Assessment&quot;, &quot;Group&quot;, &quot;Description&quot;, &quot;Speaker Notes&quot;, &quot;Forum&quot;, &quot;Web&quot;, &quot;Loyalty&quot;, &quot;Content Paste&quot;, &quot;Headset&quot;, &quot;Share&quot;, &quot;Navigation&quot;, &quot;Notification&quot;, &quot;Voicemail&quot;, &quot;Room&quot;, &quot;Edit&quot;, &quot;Send&quot;, &quot;Videocam&quot;, &quot;Play Arrow&quot;, &quot;Grocery Store&quot;, &quot;Mic&quot;, &quot;Camera Mic&quot;, &quot;Todo&quot; | |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PutCustomActivityTypesByCustomActivityTypeIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityTypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PutCustomActivityTypesByCustomActivityTypeIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomActivityTypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

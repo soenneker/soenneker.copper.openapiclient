@@ -34,44 +34,45 @@ namespace Soenneker.Copper.OpenApiClient.Users.Search
         {
         }
         /// <summary>
-        /// **Parameters**You can include the following parameters in a search request.
+        /// **Parameters**You can include the following parameters in a search request.|         Field         |  Type  |                            Details                             | Default || --------------------- | ------ | -------------------------------------------------------------- | ------- || *Required Parameters* |        |                                                                |         || --                    |        |                                                                |         || *Optional Parameters* |        |                                                                |         || page_number           | number | The page number (starting with 1) that you would like to view. | 1       || page_size             | number | The number of entries included in a page of results            | 20      |
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Copper.OpenApiClient.Models.ListUsers200ResponseItem&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostUsersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListUsers200ResponseItem>?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.ListUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.PostUsersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Copper.OpenApiClient.Models.ListUsers200ResponseItem>> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.ListUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListUsers200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListUsers200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
-        /// **Parameters**You can include the following parameters in a search request.
+        /// **Parameters**You can include the following parameters in a search request.|         Field         |  Type  |                            Details                             | Default || --------------------- | ------ | -------------------------------------------------------------- | ------- || *Required Parameters* |        |                                                                |         || --                    |        |                                                                |         || *Optional Parameters* |        |                                                                |         || page_number           | number | The page number (starting with 1) that you would like to view. | 1       || page_size             | number | The number of entries included in a page of results            | 20      |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostUsersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.ListUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.PostUsersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.ListUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
