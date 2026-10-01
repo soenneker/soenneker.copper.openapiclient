@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer_source_id property</summary>
-        public int? CustomerSourceId { get; set; }
+        public long? CustomerSourceId { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The primary_contact_id property</summary>
-        public int? PrimaryContactId { get; set; }
+        public long? PrimaryContactId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunityRequest"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customer_source_id", n => { CustomerSourceId = n.GetIntValue(); } },
+                { "customer_source_id", n => { CustomerSourceId = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "primary_contact_id", n => { PrimaryContactId = n.GetIntValue(); } },
+                { "primary_contact_id", n => { PrimaryContactId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("customer_source_id", CustomerSourceId);
+            writer.WriteLongValue("customer_source_id", CustomerSourceId);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("primary_contact_id", PrimaryContactId);
+            writer.WriteLongValue("primary_contact_id", PrimaryContactId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

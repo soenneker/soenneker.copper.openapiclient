@@ -23,11 +23,11 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string ContentType { get; set; }
 #endif
         /// <summary>The creator_id property</summary>
-        public int? CreatorId { get; set; }
+        public long? CreatorId { get; set; }
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The file_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,9 +37,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string FileName { get; set; }
 #endif
         /// <summary>The file_size property</summary>
-        public int? FileSize { get; set; }
+        public long? FileSize { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The is_deleted property</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>
@@ -68,12 +68,12 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "creator_id", n => { CreatorId = n.GetIntValue(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "creator_id", n => { CreatorId = n.GetLongValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "file_name", n => { FileName = n.GetStringValue(); } },
-                { "file_size", n => { FileSize = n.GetIntValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "file_size", n => { FileSize = n.GetLongValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "is_deleted", n => { IsDeleted = n.GetBoolValue(); } },
             };
         }
@@ -85,12 +85,12 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteIntValue("creator_id", CreatorId);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("creator_id", CreatorId);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("file_name", FileName);
-            writer.WriteIntValue("file_size", FileSize);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("file_size", FileSize);
+            writer.WriteLongValue("id", Id);
             writer.WriteBoolValue("is_deleted", IsDeleted);
             writer.WriteAdditionalData(AdditionalData);
         }

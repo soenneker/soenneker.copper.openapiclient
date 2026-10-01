@@ -25,13 +25,19 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public UntypedNode? Country { get; set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public UntypedNode Country { get; set; }
 #endif
         /// <summary>The postal_code property</summary>
-        public int? PostalCode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PostalCode { get; set; }
+#nullable restore
+#else
+        public string PostalCode { get; set; }
+#endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,8 +80,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "city", n => { City = n.GetStringValue(); } },
-                { "country", n => { Country = n.GetStringValue(); } },
-                { "postal_code", n => { PostalCode = n.GetIntValue(); } },
+                { "country", n => { Country = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postal_code", n => { PostalCode = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
             };
@@ -88,8 +94,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("city", City);
-            writer.WriteStringValue("country", Country);
-            writer.WriteIntValue("postal_code", PostalCode);
+            writer.WriteObjectValue<UntypedNode>("country", Country);
+            writer.WriteStringValue("postal_code", PostalCode);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);
             writer.WriteAdditionalData(AdditionalData);

@@ -17,18 +17,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public UntypedNode Id { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public UntypedNode? Type { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public UntypedNode Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.CreateANewTask200ResponseRelatedResource"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteObjectValue<UntypedNode>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListPipelines200ResponseItemStagesItem>(global::Soenneker.Copper.OpenApiClient.Models.ListPipelines200ResponseItemStagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListPipelines200ResponseItemStagesItem>("stages", Stages);
             writer.WriteAdditionalData(AdditionalData);

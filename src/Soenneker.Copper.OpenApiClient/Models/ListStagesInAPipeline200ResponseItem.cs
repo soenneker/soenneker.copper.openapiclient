@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +25,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The pipeline_id property</summary>
-        public int? PipelineId { get; set; }
+        public long? PipelineId { get; set; }
         /// <summary>The win_probability property</summary>
-        public int? WinProbability { get; set; }
+        public long? WinProbability { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListStagesInAPipeline200ResponseItem"/> and sets the default values.
         /// </summary>
@@ -53,10 +53,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "pipeline_id", n => { PipelineId = n.GetIntValue(); } },
-                { "win_probability", n => { WinProbability = n.GetIntValue(); } },
+                { "pipeline_id", n => { PipelineId = n.GetLongValue(); } },
+                { "win_probability", n => { WinProbability = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("pipeline_id", PipelineId);
-            writer.WriteIntValue("win_probability", WinProbability);
+            writer.WriteLongValue("pipeline_id", PipelineId);
+            writer.WriteLongValue("win_probability", WinProbability);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Ids { get; set; }
+        public List<long?>? Ids { get; set; }
 #nullable restore
 #else
-        public List<int?> Ids { get; set; }
+        public List<long?> Ids { get; set; }
 #endif
         /// <summary>The is_deleted property</summary>
         public bool? IsDeleted { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "is_deleted", n => { IsDeleted = n.GetBoolValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("ids", Ids);
+            writer.WriteCollectionOfPrimitiveValues<long?>("ids", Ids);
             writer.WriteBoolValue("is_deleted", IsDeleted);
             writer.WriteAdditionalData(AdditionalData);
         }

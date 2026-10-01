@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The monetary_value property</summary>
-        public int? MonetaryValue { get; set; }
+        public long? MonetaryValue { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +25,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The pipeline_id property</summary>
-        public int? PipelineId { get; set; }
+        public long? PipelineId { get; set; }
         /// <summary>The pipeline_stage_id property</summary>
-        public int? PipelineStageId { get; set; }
+        public long? PipelineStageId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity"/> and sets the default values.
         /// </summary>
@@ -53,10 +53,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "monetary_value", n => { MonetaryValue = n.GetIntValue(); } },
+                { "monetary_value", n => { MonetaryValue = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "pipeline_id", n => { PipelineId = n.GetIntValue(); } },
-                { "pipeline_stage_id", n => { PipelineStageId = n.GetIntValue(); } },
+                { "pipeline_id", n => { PipelineId = n.GetLongValue(); } },
+                { "pipeline_stage_id", n => { PipelineStageId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("monetary_value", MonetaryValue);
+            writer.WriteLongValue("monetary_value", MonetaryValue);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("pipeline_id", PipelineId);
-            writer.WriteIntValue("pipeline_stage_id", PipelineStageId);
+            writer.WriteLongValue("pipeline_id", PipelineId);
+            writer.WriteLongValue("pipeline_stage_id", PipelineStageId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

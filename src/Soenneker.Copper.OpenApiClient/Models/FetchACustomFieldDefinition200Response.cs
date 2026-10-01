@@ -31,7 +31,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string DataType { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             {
                 { "available_on", n => { AvailableOn = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "data_type", n => { DataType = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200ResponseOptionsItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200ResponseOptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("available_on", AvailableOn);
             writer.WriteStringValue("data_type", DataType);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200ResponseOptionsItem>("options", Options);
             writer.WriteAdditionalData(AdditionalData);

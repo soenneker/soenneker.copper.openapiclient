@@ -9,19 +9,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpsertaLeadByCustomFieldRequestProperties : IAdditionalDataHolder, IParsable
+    public partial class UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestPropertiesEmail? Email { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestPropertiesEmail Email { get; set; }
-#endif
+        /// <summary>The id property</summary>
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,22 +24,24 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The rank property</summary>
+        public long? Rank { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestProperties"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem"/> and sets the default values.
         /// </summary>
-        public UpsertaLeadByCustomFieldRequestProperties()
+        public UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestProperties"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestProperties CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestProperties();
+            return new global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +51,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestPropertiesEmail>(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestPropertiesEmail.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "rank", n => { Rank = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +63,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestPropertiesEmail>("email", Email);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteLongValue("rank", Rank);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

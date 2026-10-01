@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The page_size property</summary>
-        public int? PageSize { get; set; }
+        public long? PageSize { get; set; }
         /// <summary>The sort_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "page_size", n => { PageSize = n.GetIntValue(); } },
+                { "page_size", n => { PageSize = n.GetLongValue(); } },
                 { "sort_by", n => { SortBy = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("page_size", PageSize);
+            writer.WriteLongValue("page_size", PageSize);
             writer.WriteStringValue("sort_by", SortBy);
             writer.WriteAdditionalData(AdditionalData);
         }

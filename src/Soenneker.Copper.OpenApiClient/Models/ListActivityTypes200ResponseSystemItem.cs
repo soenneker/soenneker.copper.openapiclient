@@ -25,7 +25,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The count_as_interaction property</summary>
         public bool? CountAsInteraction { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The is_disabled property</summary>
         public bool? IsDisabled { get; set; }
         /// <summary>The name property</summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "count_as_interaction", n => { CountAsInteraction = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteBoolValue("count_as_interaction", CountAsInteraction);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

@@ -17,21 +17,21 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The assignee_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeId { get; set; }
+        public UntypedNode? AssigneeId { get; set; }
 #nullable restore
 #else
-        public string AssigneeId { get; set; }
+        public UntypedNode AssigneeId { get; set; }
 #endif
         /// <summary>The close_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloseDate { get; set; }
+        public UntypedNode? CloseDate { get; set; }
 #nullable restore
 #else
-        public string CloseDate { get; set; }
+        public UntypedNode CloseDate { get; set; }
 #endif
         /// <summary>The company_id property</summary>
-        public int? CompanyId { get; set; }
+        public long? CompanyId { get; set; }
         /// <summary>The company_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string CompanyName { get; set; }
 #endif
         /// <summary>The customer_source_id property</summary>
-        public int? CustomerSourceId { get; set; }
+        public long? CustomerSourceId { get; set; }
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,52 +51,52 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public List<global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunity200ResponseCustomFieldsItem> CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_last_contacted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateLastContacted { get; set; }
+        public UntypedNode? DateLastContacted { get; set; }
 #nullable restore
 #else
-        public string DateLastContacted { get; set; }
+        public UntypedNode DateLastContacted { get; set; }
 #endif
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public UntypedNode? Details { get; set; }
 #nullable restore
 #else
-        public string Details { get; set; }
+        public UntypedNode Details { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The interaction_count property</summary>
-        public int? InteractionCount { get; set; }
+        public long? InteractionCount { get; set; }
         /// <summary>The leads_converted_from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LeadsConvertedFrom { get; set; }
+        public UntypedNode? LeadsConvertedFrom { get; set; }
 #nullable restore
 #else
-        public List<string> LeadsConvertedFrom { get; set; }
+        public UntypedNode LeadsConvertedFrom { get; set; }
 #endif
         /// <summary>The loss_reason_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LossReasonId { get; set; }
+        public UntypedNode? LossReasonId { get; set; }
 #nullable restore
 #else
-        public string LossReasonId { get; set; }
+        public UntypedNode LossReasonId { get; set; }
 #endif
         /// <summary>The monetary_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonetaryValue { get; set; }
+        public UntypedNode? MonetaryValue { get; set; }
 #nullable restore
 #else
-        public string MonetaryValue { get; set; }
+        public UntypedNode MonetaryValue { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,11 +107,11 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The pipeline_id property</summary>
-        public int? PipelineId { get; set; }
+        public long? PipelineId { get; set; }
         /// <summary>The pipeline_stage_id property</summary>
-        public int? PipelineStageId { get; set; }
+        public long? PipelineStageId { get; set; }
         /// <summary>The primary_contact_id property</summary>
-        public int? PrimaryContactId { get; set; }
+        public long? PrimaryContactId { get; set; }
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,13 +131,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public UntypedNode? Tags { get; set; }
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public UntypedNode Tags { get; set; }
 #endif
         /// <summary>The win_probability property</summary>
-        public int? WinProbability { get; set; }
+        public long? WinProbability { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunity200Response"/> and sets the default values.
         /// </summary>
@@ -163,29 +163,29 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee_id", n => { AssigneeId = n.GetStringValue(); } },
-                { "close_date", n => { CloseDate = n.GetStringValue(); } },
-                { "company_id", n => { CompanyId = n.GetIntValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "close_date", n => { CloseDate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "company_id", n => { CompanyId = n.GetLongValue(); } },
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunity200ResponseCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunity200ResponseCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "customer_source_id", n => { CustomerSourceId = n.GetIntValue(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_last_contacted", n => { DateLastContacted = n.GetStringValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
-                { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "interaction_count", n => { InteractionCount = n.GetIntValue(); } },
-                { "leads_converted_from", n => { LeadsConvertedFrom = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "loss_reason_id", n => { LossReasonId = n.GetStringValue(); } },
-                { "monetary_value", n => { MonetaryValue = n.GetStringValue(); } },
+                { "customer_source_id", n => { CustomerSourceId = n.GetLongValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_last_contacted", n => { DateLastContacted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
+                { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "interaction_count", n => { InteractionCount = n.GetLongValue(); } },
+                { "leads_converted_from", n => { LeadsConvertedFrom = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "loss_reason_id", n => { LossReasonId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "monetary_value", n => { MonetaryValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "pipeline_id", n => { PipelineId = n.GetIntValue(); } },
-                { "pipeline_stage_id", n => { PipelineStageId = n.GetIntValue(); } },
-                { "primary_contact_id", n => { PrimaryContactId = n.GetIntValue(); } },
+                { "pipeline_id", n => { PipelineId = n.GetLongValue(); } },
+                { "pipeline_stage_id", n => { PipelineStageId = n.GetLongValue(); } },
+                { "primary_contact_id", n => { PrimaryContactId = n.GetLongValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "win_probability", n => { WinProbability = n.GetIntValue(); } },
+                { "tags", n => { Tags = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "win_probability", n => { WinProbability = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -195,29 +195,29 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("assignee_id", AssigneeId);
-            writer.WriteStringValue("close_date", CloseDate);
-            writer.WriteIntValue("company_id", CompanyId);
+            writer.WriteObjectValue<UntypedNode>("assignee_id", AssigneeId);
+            writer.WriteObjectValue<UntypedNode>("close_date", CloseDate);
+            writer.WriteLongValue("company_id", CompanyId);
             writer.WriteStringValue("company_name", CompanyName);
-            writer.WriteIntValue("customer_source_id", CustomerSourceId);
+            writer.WriteLongValue("customer_source_id", CustomerSourceId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewOpportunity200ResponseCustomFieldsItem>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteStringValue("date_last_contacted", DateLastContacted);
-            writer.WriteIntValue("date_modified", DateModified);
-            writer.WriteStringValue("details", Details);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("interaction_count", InteractionCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("leads_converted_from", LeadsConvertedFrom);
-            writer.WriteStringValue("loss_reason_id", LossReasonId);
-            writer.WriteStringValue("monetary_value", MonetaryValue);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteObjectValue<UntypedNode>("date_last_contacted", DateLastContacted);
+            writer.WriteLongValue("date_modified", DateModified);
+            writer.WriteObjectValue<UntypedNode>("details", Details);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("interaction_count", InteractionCount);
+            writer.WriteObjectValue<UntypedNode>("leads_converted_from", LeadsConvertedFrom);
+            writer.WriteObjectValue<UntypedNode>("loss_reason_id", LossReasonId);
+            writer.WriteObjectValue<UntypedNode>("monetary_value", MonetaryValue);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("pipeline_id", PipelineId);
-            writer.WriteIntValue("pipeline_stage_id", PipelineStageId);
-            writer.WriteIntValue("primary_contact_id", PrimaryContactId);
+            writer.WriteLongValue("pipeline_id", PipelineId);
+            writer.WriteLongValue("pipeline_stage_id", PipelineStageId);
+            writer.WriteLongValue("primary_contact_id", PrimaryContactId);
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteIntValue("win_probability", WinProbability);
+            writer.WriteObjectValue<UntypedNode>("tags", Tags);
+            writer.WriteLongValue("win_probability", WinProbability);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,9 +23,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress Address { get; set; }
 #endif
         /// <summary>The assignee_id property</summary>
-        public int? AssigneeId { get; set; }
+        public long? AssigneeId { get; set; }
         /// <summary>The contact_type_id property</summary>
-        public int? ContactTypeId { get; set; }
+        public long? ContactTypeId { get; set; }
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,9 +35,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem> CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,9 +55,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string EmailDomain { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The interaction_count property</summary>
-        public int? InteractionCount { get; set; }
+        public long? InteractionCount { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,18 +69,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The phone_numbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>? PhoneNumbers { get; set; }
 #nullable restore
 #else
-        public List<string> PhoneNumbers { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem> PhoneNumbers { get; set; }
 #endif
         /// <summary>The socials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Socials { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>? Socials { get; set; }
 #nullable restore
 #else
-        public List<string> Socials { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem> Socials { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,10 +93,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The websites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Websites { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>? Websites { get; set; }
 #nullable restore
 #else
-        public List<string> Websites { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem> Websites { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItem"/> and sets the default values.
@@ -124,20 +124,20 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress>(global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress.CreateFromDiscriminatorValue); } },
-                { "assignee_id", n => { AssigneeId = n.GetIntValue(); } },
-                { "contact_type_id", n => { ContactTypeId = n.GetIntValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetLongValue(); } },
+                { "contact_type_id", n => { ContactTypeId = n.GetLongValue(); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "interaction_count", n => { InteractionCount = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "interaction_count", n => { InteractionCount = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "socials", n => { Socials = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>(global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "socials", n => { Socials = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>(global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "websites", n => { Websites = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>(global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -148,20 +148,20 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress>("address", Address);
-            writer.WriteIntValue("assignee_id", AssigneeId);
-            writer.WriteIntValue("contact_type_id", ContactTypeId);
+            writer.WriteLongValue("assignee_id", AssigneeId);
+            writer.WriteLongValue("contact_type_id", ContactTypeId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("email_domain", EmailDomain);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("interaction_count", InteractionCount);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("interaction_count", InteractionCount);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("phone_numbers", PhoneNumbers);
-            writer.WriteCollectionOfPrimitiveValues<string>("socials", Socials);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>("phone_numbers", PhoneNumbers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>("socials", Socials);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteCollectionOfPrimitiveValues<string>("websites", Websites);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>("websites", Websites);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

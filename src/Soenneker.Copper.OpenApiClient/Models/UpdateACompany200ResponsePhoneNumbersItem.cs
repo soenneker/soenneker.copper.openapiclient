@@ -23,7 +23,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Category { get; set; }
 #endif
         /// <summary>The number property</summary>
-        public int? Number { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Number { get; set; }
+#nullable restore
+#else
+        public string Number { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateACompany200ResponsePhoneNumbersItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category", n => { Category = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
-            writer.WriteIntValue("number", Number);
+            writer.WriteStringValue("number", Number);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

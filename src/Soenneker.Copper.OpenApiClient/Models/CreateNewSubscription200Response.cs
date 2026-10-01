@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Event { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,9 +75,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetIntValue(); } },
+                { "created_at", n => { CreatedAt = n.GetLongValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateNewSubscription200ResponseSecret>(global::Soenneker.Copper.OpenApiClient.Models.CreateNewSubscription200ResponseSecret.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -90,9 +90,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("created_at", CreatedAt);
+            writer.WriteLongValue("created_at", CreatedAt);
             writer.WriteStringValue("event", Event);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateNewSubscription200ResponseSecret>("secret", Secret);
             writer.WriteStringValue("target", Target);
             writer.WriteStringValue("type", Type);

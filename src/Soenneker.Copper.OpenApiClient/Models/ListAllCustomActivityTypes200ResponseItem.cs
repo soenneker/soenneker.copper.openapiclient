@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company_id property</summary>
-        public int? CompanyId { get; set; }
+        public long? CompanyId { get; set; }
         /// <summary>The icon_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,15 +25,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string IconType { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The is_default_task_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IsDefaultTaskType { get; set; }
-#nullable restore
-#else
-        public string IsDefaultTaskType { get; set; }
-#endif
+        public bool? IsDefaultTaskType { get; set; }
         /// <summary>The is_disabled property</summary>
         public bool? IsDisabled { get; set; }
         /// <summary>The is_interaction property</summary>
@@ -71,10 +65,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "company_id", n => { CompanyId = n.GetIntValue(); } },
+                { "company_id", n => { CompanyId = n.GetLongValue(); } },
                 { "icon_type", n => { IconType = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "is_default_task_type", n => { IsDefaultTaskType = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "is_default_task_type", n => { IsDefaultTaskType = n.GetBoolValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "is_interaction", n => { IsInteraction = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -87,10 +81,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("company_id", CompanyId);
+            writer.WriteLongValue("company_id", CompanyId);
             writer.WriteStringValue("icon_type", IconType);
-            writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("is_default_task_type", IsDefaultTaskType);
+            writer.WriteLongValue("id", Id);
+            writer.WriteBoolValue("is_default_task_type", IsDefaultTaskType);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteBoolValue("is_interaction", IsInteraction);
             writer.WriteStringValue("name", Name);

@@ -175,43 +175,43 @@ namespace Soenneker.Copper.OpenApiClient
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }
         /// <summary>
-        /// This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
+        /// This API endpoint is step 2 of 3 to upload a file and attach it to an existing entity.The endpoint uploads the file to Amazon S3 service,in which the following parameters are required:|           Field           |    Type     |                                    Details                                    | Default || ------------------------- | ----------- | ----------------------------------------------------------------------------- | ------- || key*                      | string      | Value of &quot;key&quot; from response of Upload 1 API endpoint                         |         || signature*                | string      | Value of &quot;signature&quot; from response of Upload 1 API endpoint                   |         || success_action_status*    | string      | Value of &quot;success_action_status&quot; from response of Upload 1 API endpoint       | 201     || acl*                      | string      | Value of &quot;acl&quot; from response of Upload 1 API endpoint                         | private || AWSAccessKeyId*           | string      | Value of &quot;aws_access_key_id&quot; from response of Upload 1 API endpoint           |         || policy*                   | string      | Value of &quot;policy&quot; from response of Upload 1 API endpoint                      |         || file*                     | string      | String representing the full path to file on user&apos;s local computer            |         || \* indicates a required field ||||This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.NotificationExampleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Copper.OpenApiClient.Models.NotificationExampleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
+        /// This API endpoint is step 2 of 3 to upload a file and attach it to an existing entity.The endpoint uploads the file to Amazon S3 service,in which the following parameters are required:|           Field           |    Type     |                                    Details                                    | Default || ------------------------- | ----------- | ----------------------------------------------------------------------------- | ------- || key*                      | string      | Value of &quot;key&quot; from response of Upload 1 API endpoint                         |         || signature*                | string      | Value of &quot;signature&quot; from response of Upload 1 API endpoint                   |         || success_action_status*    | string      | Value of &quot;success_action_status&quot; from response of Upload 1 API endpoint       | 201     || acl*                      | string      | Value of &quot;acl&quot; from response of Upload 1 API endpoint                         | private || AWSAccessKeyId*           | string      | Value of &quot;aws_access_key_id&quot; from response of Upload 1 API endpoint           |         || policy*                   | string      | Value of &quot;policy&quot; from response of Upload 1 API endpoint                      |         || file*                     | string      | String representing the full path to file on user&apos;s local computer            |         || \* indicates a required field ||||This example shows the notification request your endpoint will receive when a notification is sent. There can be 0 or more secret fields shown, depending on the initial webhook configuration. The &quot;updated_attributes&quot; field only shows up on an &quot;update&quot; event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.NotificationExampleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.NotificationExampleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/xml");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

@@ -9,7 +9,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpsertaLeadByCustomFieldRequestMatch : IAdditionalDataHolder, IParsable
+    public partial class UpsertaLeadRequestMatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,27 +25,27 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The field_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatchFieldValue? FieldValue { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue? FieldValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatchFieldValue FieldValue { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue FieldValue { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatch"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch"/> and sets the default values.
         /// </summary>
-        public UpsertaLeadByCustomFieldRequestMatch()
+        public UpsertaLeadRequestMatch()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatch CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatch();
+            return new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +56,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field_name", n => { FieldName = n.GetStringValue(); } },
-                { "field_value", n => { FieldValue = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatchFieldValue>(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatchFieldValue.CreateFromDiscriminatorValue); } },
+                { "field_value", n => { FieldValue = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue>(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field_name", FieldName);
-            writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequestMatchFieldValue>("field_value", FieldValue);
+            writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue>("field_value", FieldValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

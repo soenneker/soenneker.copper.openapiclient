@@ -23,7 +23,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress Address { get; set; }
 #endif
         /// <summary>The customer_source_id property</summary>
-        public int? CustomerSourceId { get; set; }
+        public long? CustomerSourceId { get; set; }
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +83,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress.CreateFromDiscriminatorValue); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "customer_source_id", n => { CustomerSourceId = n.GetIntValue(); } },
+                { "customer_source_id", n => { CustomerSourceId = n.GetLongValue(); } },
                 { "email", n => { Email = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestEmail>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestEmail.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestPhoneNumbersItem>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestPhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress>("address", Address);
-            writer.WriteIntValue("customer_source_id", CustomerSourceId);
+            writer.WriteLongValue("customer_source_id", CustomerSourceId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestCustomFieldsItem>("custom_fields", CustomFields);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestEmail>("email", Email);
             writer.WriteStringValue("name", Name);

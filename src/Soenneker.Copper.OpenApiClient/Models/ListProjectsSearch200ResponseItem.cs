@@ -14,8 +14,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress? Address { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress Address { get; set; }
+#endif
         /// <summary>The assignee_id property</summary>
-        public int? AssigneeId { get; set; }
+        public long? AssigneeId { get; set; }
+        /// <summary>The contact_type_id property</summary>
+        public long? ContactTypeId { get; set; }
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +35,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemCustomFieldsItem> CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +46,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #else
         public string Details { get; set; }
 #endif
+        /// <summary>The email_domain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmailDomain { get; set; }
+#nullable restore
+#else
+        public string EmailDomain { get; set; }
+#endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
+        /// <summary>The interaction_count property</summary>
+        public long? InteractionCount { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +66,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The phone_numbers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemPhoneNumbersItem>? PhoneNumbers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemPhoneNumbersItem> PhoneNumbers { get; set; }
+#endif
         /// <summary>The related_resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +81,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemRelatedResource RelatedResource { get; set; }
+#endif
+        /// <summary>The socials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemSocialsItem>? Socials { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemSocialsItem> Socials { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,6 +105,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Tags { get; set; }
+#endif
+        /// <summary>The websites property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemWebsitesItem>? Websites { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemWebsitesItem> Websites { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItem"/> and sets the default values.
@@ -95,16 +139,23 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee_id", n => { AssigneeId = n.GetIntValue(); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress.CreateFromDiscriminatorValue); } },
+                { "assignee_id", n => { AssigneeId = n.GetLongValue(); } },
+                { "contact_type_id", n => { ContactTypeId = n.GetLongValue(); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "interaction_count", n => { InteractionCount = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemPhoneNumbersItem>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemPhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "related_resource", n => { RelatedResource = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemRelatedResource>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemRelatedResource.CreateFromDiscriminatorValue); } },
+                { "socials", n => { Socials = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemSocialsItem>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemSocialsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemWebsitesItem>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemWebsitesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -114,16 +165,23 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("assignee_id", AssigneeId);
+            writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress>("address", Address);
+            writer.WriteLongValue("assignee_id", AssigneeId);
+            writer.WriteLongValue("contact_type_id", ContactTypeId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemCustomFieldsItem>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("email_domain", EmailDomain);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("interaction_count", InteractionCount);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemPhoneNumbersItem>("phone_numbers", PhoneNumbers);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemRelatedResource>("related_resource", RelatedResource);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemSocialsItem>("socials", Socials);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemWebsitesItem>("websites", Websites);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseAddress Address { get; set; }
 #endif
         /// <summary>The assignee_id property</summary>
-        public int? AssigneeId { get; set; }
+        public long? AssigneeId { get; set; }
         /// <summary>The company_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string CompanyName { get; set; }
 #endif
         /// <summary>The customer_source_id property</summary>
-        public int? CustomerSourceId { get; set; }
+        public long? CustomerSourceId { get; set; }
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,9 +43,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public List<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseCustomFieldsItem> CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +71,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string FirstName { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The last_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,13 +83,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The middle_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName { get; set; }
+        public UntypedNode? MiddleName { get; set; }
 #nullable restore
 #else
-        public string MiddleName { get; set; }
+        public UntypedNode MiddleName { get; set; }
 #endif
         /// <summary>The monetary_value property</summary>
-        public int? MonetaryValue { get; set; }
+        public long? MonetaryValue { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,10 +109,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get; set; }
+        public UntypedNode? Prefix { get; set; }
 #nullable restore
 #else
-        public string Prefix { get; set; }
+        public UntypedNode Prefix { get; set; }
 #endif
         /// <summary>The socials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,14 +131,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>The status_id property</summary>
-        public int? StatusId { get; set; }
+        public long? StatusId { get; set; }
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suffix { get; set; }
+        public UntypedNode? Suffix { get; set; }
 #nullable restore
 #else
-        public string Suffix { get; set; }
+        public UntypedNode Suffix { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,26 +190,26 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseAddress>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseAddress.CreateFromDiscriminatorValue); } },
-                { "assignee_id", n => { AssigneeId = n.GetIntValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetLongValue(); } },
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "customer_source_id", n => { CustomerSourceId = n.GetIntValue(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "customer_source_id", n => { CustomerSourceId = n.GetLongValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseEmail>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseEmail.CreateFromDiscriminatorValue); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
-                { "middle_name", n => { MiddleName = n.GetStringValue(); } },
-                { "monetary_value", n => { MonetaryValue = n.GetIntValue(); } },
+                { "middle_name", n => { MiddleName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "monetary_value", n => { MonetaryValue = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponsePhoneNumbersItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponsePhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "prefix", n => { Prefix = n.GetStringValue(); } },
+                { "prefix", n => { Prefix = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "socials", n => { Socials = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseSocialsItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseSocialsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "status_id", n => { StatusId = n.GetIntValue(); } },
-                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "status_id", n => { StatusId = n.GetLongValue(); } },
+                { "suffix", n => { Suffix = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseWebsitesItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseWebsitesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -223,26 +223,26 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseAddress>("address", Address);
-            writer.WriteIntValue("assignee_id", AssigneeId);
+            writer.WriteLongValue("assignee_id", AssigneeId);
             writer.WriteStringValue("company_name", CompanyName);
-            writer.WriteIntValue("customer_source_id", CustomerSourceId);
+            writer.WriteLongValue("customer_source_id", CustomerSourceId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseCustomFieldsItem>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseEmail>("email", Email);
             writer.WriteStringValue("first_name", FirstName);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("last_name", LastName);
-            writer.WriteStringValue("middle_name", MiddleName);
-            writer.WriteIntValue("monetary_value", MonetaryValue);
+            writer.WriteObjectValue<UntypedNode>("middle_name", MiddleName);
+            writer.WriteLongValue("monetary_value", MonetaryValue);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponsePhoneNumbersItem>("phone_numbers", PhoneNumbers);
-            writer.WriteStringValue("prefix", Prefix);
+            writer.WriteObjectValue<UntypedNode>("prefix", Prefix);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseSocialsItem>("socials", Socials);
             writer.WriteStringValue("status", Status);
-            writer.WriteIntValue("status_id", StatusId);
-            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteLongValue("status_id", StatusId);
+            writer.WriteObjectValue<UntypedNode>("suffix", Suffix);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchALeadById200ResponseWebsitesItem>("websites", Websites);

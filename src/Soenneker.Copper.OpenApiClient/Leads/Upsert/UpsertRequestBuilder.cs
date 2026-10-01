@@ -34,44 +34,44 @@ namespace Soenneker.Copper.OpenApiClient.Leads.Upsert
         {
         }
         /// <summary>
-        /// UPSERT a Lead (by custom field)
+        /// **Functionality**&quot;Upsert&quot; (update + insert) will atomically do the following:1. Check for the existence of a Lead matching certain criteria1. If one exists, update it with the supplied parameters.1. If not, create a new Lead with the supplied parameters.1. This is particularly useful to avoid creating duplicate Leads.**Match Criteria**The supported match criteria are:* Name* Email* Custom FieldsTo match on a Custom Field, the corresponding Custom Field Definition must be available on Leads and included in filters. (These settings may be viewed and edited in the web application via System Settings -&gt; Custom Fields.)**Match Outcomes**Match outcomes are handled as follows:* If no matches are found, create a new Lead.* If exactly one match is found, update that Lead.* If more than one match is found, return a 422 response with the IDs of the matching Leads.* If more than 30 matches are found, return a 422 response without the IDs of the matching Leads.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomField200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLead200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomField200Response?> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLead200Response?> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomField200Response> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLead200Response> PutAsync(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomField200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomField200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLead200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.UpsertaLead200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// UPSERT a Lead (by custom field)
+        /// **Functionality**&quot;Upsert&quot; (update + insert) will atomically do the following:1. Check for the existence of a Lead matching certain criteria1. If one exists, update it with the supplied parameters.1. If not, create a new Lead with the supplied parameters.1. This is particularly useful to avoid creating duplicate Leads.**Match Criteria**The supported match criteria are:* Name* Email* Custom FieldsTo match on a Custom Field, the corresponding Custom Field Definition must be available on Leads and included in filters. (These settings may be viewed and edited in the web application via System Settings -&gt; Custom Fields.)**Match Outcomes**Match outcomes are handled as follows:* If no matches are found, create a new Lead.* If exactly one match is found, update that Lead.* If more than one match is found, return a 422 response with the IDs of the matching Leads.* If more than 30 matches are found, return a 422 response without the IDs of the matching Leads.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadByCustomFieldRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json;charset=utf-8");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

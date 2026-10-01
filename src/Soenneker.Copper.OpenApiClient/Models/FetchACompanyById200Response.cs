@@ -25,18 +25,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The assignee_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeId { get; set; }
+        public UntypedNode? AssigneeId { get; set; }
 #nullable restore
 #else
-        public string AssigneeId { get; set; }
+        public UntypedNode AssigneeId { get; set; }
 #endif
         /// <summary>The contact_type_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactTypeId { get; set; }
+        public UntypedNode? ContactTypeId { get; set; }
 #nullable restore
 #else
-        public string ContactTypeId { get; set; }
+        public UntypedNode ContactTypeId { get; set; }
 #endif
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,9 +47,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public List<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseCustomFieldsItem> CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,9 +67,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string EmailDomain { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The interaction_count property</summary>
-        public int? InteractionCount { get; set; }
+        public long? InteractionCount { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,18 +89,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The socials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Socials { get; set; }
+        public UntypedNode? Socials { get; set; }
 #nullable restore
 #else
-        public List<string> Socials { get; set; }
+        public UntypedNode Socials { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public UntypedNode? Tags { get; set; }
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public UntypedNode Tags { get; set; }
 #endif
         /// <summary>The websites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,19 +136,19 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseAddress>(global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseAddress.CreateFromDiscriminatorValue); } },
-                { "assignee_id", n => { AssigneeId = n.GetStringValue(); } },
-                { "contact_type_id", n => { ContactTypeId = n.GetStringValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "contact_type_id", n => { ContactTypeId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "interaction_count", n => { InteractionCount = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "interaction_count", n => { InteractionCount = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponsePhoneNumbersItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponsePhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "socials", n => { Socials = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "socials", n => { Socials = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseWebsitesItem>(global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseWebsitesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -160,19 +160,19 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseAddress>("address", Address);
-            writer.WriteStringValue("assignee_id", AssigneeId);
-            writer.WriteStringValue("contact_type_id", ContactTypeId);
+            writer.WriteObjectValue<UntypedNode>("assignee_id", AssigneeId);
+            writer.WriteObjectValue<UntypedNode>("contact_type_id", ContactTypeId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseCustomFieldsItem>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("email_domain", EmailDomain);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("interaction_count", InteractionCount);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("interaction_count", InteractionCount);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponsePhoneNumbersItem>("phone_numbers", PhoneNumbers);
-            writer.WriteCollectionOfPrimitiveValues<string>("socials", Socials);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteObjectValue<UntypedNode>("socials", Socials);
+            writer.WriteObjectValue<UntypedNode>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseWebsitesItem>("websites", Websites);
             writer.WriteAdditionalData(AdditionalData);
         }

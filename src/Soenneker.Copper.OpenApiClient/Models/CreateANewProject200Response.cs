@@ -17,33 +17,33 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The assignee_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeId { get; set; }
+        public UntypedNode? AssigneeId { get; set; }
 #nullable restore
 #else
-        public string AssigneeId { get; set; }
+        public UntypedNode AssigneeId { get; set; }
 #endif
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomFields { get; set; }
+        public UntypedNode? CustomFields { get; set; }
 #nullable restore
 #else
-        public List<string> CustomFields { get; set; }
+        public UntypedNode CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public UntypedNode? Details { get; set; }
 #nullable restore
 #else
-        public string Details { get; set; }
+        public UntypedNode Details { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,10 +55,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The related_resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelatedResource { get; set; }
+        public UntypedNode? RelatedResource { get; set; }
 #nullable restore
 #else
-        public string RelatedResource { get; set; }
+        public UntypedNode RelatedResource { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,10 +71,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public UntypedNode? Tags { get; set; }
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public UntypedNode Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.CreateANewProject200Response"/> and sets the default values.
@@ -101,16 +101,16 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee_id", n => { AssigneeId = n.GetStringValue(); } },
-                { "custom_fields", n => { CustomFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
-                { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
+                { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "related_resource", n => { RelatedResource = n.GetStringValue(); } },
+                { "related_resource", n => { RelatedResource = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tags", n => { Tags = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,16 +120,16 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("assignee_id", AssigneeId);
-            writer.WriteCollectionOfPrimitiveValues<string>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
-            writer.WriteStringValue("details", Details);
-            writer.WriteIntValue("id", Id);
+            writer.WriteObjectValue<UntypedNode>("assignee_id", AssigneeId);
+            writer.WriteObjectValue<UntypedNode>("custom_fields", CustomFields);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
+            writer.WriteObjectValue<UntypedNode>("details", Details);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("related_resource", RelatedResource);
+            writer.WriteObjectValue<UntypedNode>("related_resource", RelatedResource);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteObjectValue<UntypedNode>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

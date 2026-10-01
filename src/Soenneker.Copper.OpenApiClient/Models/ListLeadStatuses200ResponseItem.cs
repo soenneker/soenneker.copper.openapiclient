@@ -15,7 +15,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The is_default property</summary>
         public bool? IsDefault { get; set; }
         /// <summary>The name property</summary>
@@ -27,7 +27,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The order property</summary>
-        public int? Order { get; set; }
+        public long? Order { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListLeadStatuses200ResponseItem"/> and sets the default values.
         /// </summary>
@@ -53,10 +53,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "order", n => { Order = n.GetIntValue(); } },
+                { "order", n => { Order = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("order", Order);
+            writer.WriteLongValue("order", Order);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

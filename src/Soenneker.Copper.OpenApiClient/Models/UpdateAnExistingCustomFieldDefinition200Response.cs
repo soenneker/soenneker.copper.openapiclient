@@ -25,10 +25,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The canonical_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CanonicalName { get; set; }
+        public UntypedNode? CanonicalName { get; set; }
 #nullable restore
 #else
-        public string CanonicalName { get; set; }
+        public UntypedNode CanonicalName { get; set; }
 #endif
         /// <summary>The data_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string DataType { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +47,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The options property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem>? Options { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem> Options { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200Response"/> and sets the default values.
@@ -74,10 +82,11 @@ namespace Soenneker.Copper.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "available_on", n => { AvailableOn = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "canonical_name", n => { CanonicalName = n.GetStringValue(); } },
+                { "canonical_name", n => { CanonicalName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "data_type", n => { DataType = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem>(global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,10 +97,11 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("available_on", AvailableOn);
-            writer.WriteStringValue("canonical_name", CanonicalName);
+            writer.WriteObjectValue<UntypedNode>("canonical_name", CanonicalName);
             writer.WriteStringValue("data_type", DataType);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200ResponseOptionsItem>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

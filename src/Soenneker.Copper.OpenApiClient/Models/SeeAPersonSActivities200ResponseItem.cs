@@ -13,13 +13,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The activity_date property</summary>
-        public int? ActivityDate { get; set; }
+        public long? ActivityDate { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,22 +29,22 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Details { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The new_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewValue { get; set; }
+        public UntypedNode? NewValue { get; set; }
 #nullable restore
 #else
-        public string NewValue { get; set; }
+        public UntypedNode NewValue { get; set; }
 #endif
         /// <summary>The old_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldValue { get; set; }
+        public UntypedNode? OldValue { get; set; }
 #nullable restore
 #else
-        public string OldValue { get; set; }
+        public UntypedNode OldValue { get; set; }
 #endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemType Type { get; set; }
 #endif
         /// <summary>The user_id property</summary>
-        public int? UserId { get; set; }
+        public long? UserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItem"/> and sets the default values.
         /// </summary>
@@ -89,16 +89,16 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity_date", n => { ActivityDate = n.GetIntValue(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "activity_date", n => { ActivityDate = n.GetLongValue(); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "new_value", n => { NewValue = n.GetStringValue(); } },
-                { "old_value", n => { OldValue = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "new_value", n => { NewValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "old_value", n => { OldValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemParent>(global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemParent.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemType>(global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemType.CreateFromDiscriminatorValue); } },
-                { "user_id", n => { UserId = n.GetIntValue(); } },
+                { "user_id", n => { UserId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -108,16 +108,16 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("activity_date", ActivityDate);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("activity_date", ActivityDate);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
-            writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("new_value", NewValue);
-            writer.WriteStringValue("old_value", OldValue);
+            writer.WriteLongValue("id", Id);
+            writer.WriteObjectValue<UntypedNode>("new_value", NewValue);
+            writer.WriteObjectValue<UntypedNode>("old_value", OldValue);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemParent>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.SeeAPersonSActivities200ResponseItemType>("type", Type);
-            writer.WriteIntValue("user_id", UserId);
+            writer.WriteLongValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,27 +15,27 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The assignee_id property</summary>
-        public int? AssigneeId { get; set; }
+        public long? AssigneeId { get; set; }
         /// <summary>The completed_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedDate { get; set; }
+        public UntypedNode? CompletedDate { get; set; }
 #nullable restore
 #else
-        public string CompletedDate { get; set; }
+        public UntypedNode CompletedDate { get; set; }
 #endif
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomFields { get; set; }
+        public UntypedNode? CustomFields { get; set; }
 #nullable restore
 #else
-        public List<string> CustomFields { get; set; }
+        public UntypedNode CustomFields { get; set; }
 #endif
         /// <summary>The date_created property</summary>
-        public int? DateCreated { get; set; }
+        public long? DateCreated { get; set; }
         /// <summary>The date_modified property</summary>
-        public int? DateModified { get; set; }
+        public long? DateModified { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,9 +45,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public string Details { get; set; }
 #endif
         /// <summary>The due_date property</summary>
-        public int? DueDate { get; set; }
+        public long? DueDate { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,10 +75,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The reminder_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReminderDate { get; set; }
+        public UntypedNode? ReminderDate { get; set; }
 #nullable restore
 #else
-        public string ReminderDate { get; set; }
+        public UntypedNode ReminderDate { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public UntypedNode? Tags { get; set; }
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public UntypedNode Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateATask200Response"/> and sets the default values.
@@ -121,20 +121,20 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee_id", n => { AssigneeId = n.GetIntValue(); } },
-                { "completed_date", n => { CompletedDate = n.GetStringValue(); } },
-                { "custom_fields", n => { CustomFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "date_created", n => { DateCreated = n.GetIntValue(); } },
-                { "date_modified", n => { DateModified = n.GetIntValue(); } },
+                { "assignee_id", n => { AssigneeId = n.GetLongValue(); } },
+                { "completed_date", n => { CompletedDate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "date_created", n => { DateCreated = n.GetLongValue(); } },
+                { "date_modified", n => { DateModified = n.GetLongValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
-                { "due_date", n => { DueDate = n.GetIntValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "due_date", n => { DueDate = n.GetLongValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "related_resource", n => { RelatedResource = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpdateATask200ResponseRelatedResource>(global::Soenneker.Copper.OpenApiClient.Models.UpdateATask200ResponseRelatedResource.CreateFromDiscriminatorValue); } },
-                { "reminder_date", n => { ReminderDate = n.GetStringValue(); } },
+                { "reminder_date", n => { ReminderDate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tags", n => { Tags = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,20 +144,20 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("assignee_id", AssigneeId);
-            writer.WriteStringValue("completed_date", CompletedDate);
-            writer.WriteCollectionOfPrimitiveValues<string>("custom_fields", CustomFields);
-            writer.WriteIntValue("date_created", DateCreated);
-            writer.WriteIntValue("date_modified", DateModified);
+            writer.WriteLongValue("assignee_id", AssigneeId);
+            writer.WriteObjectValue<UntypedNode>("completed_date", CompletedDate);
+            writer.WriteObjectValue<UntypedNode>("custom_fields", CustomFields);
+            writer.WriteLongValue("date_created", DateCreated);
+            writer.WriteLongValue("date_modified", DateModified);
             writer.WriteStringValue("details", Details);
-            writer.WriteIntValue("due_date", DueDate);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("due_date", DueDate);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpdateATask200ResponseRelatedResource>("related_resource", RelatedResource);
-            writer.WriteStringValue("reminder_date", ReminderDate);
+            writer.WriteObjectValue<UntypedNode>("reminder_date", ReminderDate);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteObjectValue<UntypedNode>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

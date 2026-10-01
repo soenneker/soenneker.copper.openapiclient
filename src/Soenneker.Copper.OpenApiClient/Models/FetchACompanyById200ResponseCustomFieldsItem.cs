@@ -15,14 +15,14 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom_field_definition_id property</summary>
-        public int? CustomFieldDefinitionId { get; set; }
+        public long? CustomFieldDefinitionId { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.FetchACompanyById200ResponseCustomFieldsItem"/> and sets the default values.
@@ -49,8 +49,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_field_definition_id", n => { CustomFieldDefinitionId = n.GetIntValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "custom_field_definition_id", n => { CustomFieldDefinitionId = n.GetLongValue(); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("custom_field_definition_id", CustomFieldDefinitionId);
-            writer.WriteStringValue("value", Value);
+            writer.WriteLongValue("custom_field_definition_id", CustomFieldDefinitionId);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
