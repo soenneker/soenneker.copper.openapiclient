@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Item.Item.Related.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{entityNameInPlural-id}\{entityId}\related\{relatedEntityName}
+    /// Builds and executes requests for operations under \{entityNameInPlural}\{entityId}\related\{relatedEntityName}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRelatedEntityNameItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelatedEntityNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/related/{relatedEntityName}", pathParameters)
+        public WithRelatedEntityNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/related/{relatedEntityName}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelatedEntityNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/related/{relatedEntityName}", rawUrl)
+        public WithRelatedEntityNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/related/{relatedEntityName}", rawUrl)
         {
         }
         /// <summary>

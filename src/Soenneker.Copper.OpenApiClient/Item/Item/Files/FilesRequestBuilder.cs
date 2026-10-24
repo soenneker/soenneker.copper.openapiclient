@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Item.Item.Files
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{entityNameInPlural-id}\{entityId}\files
+    /// Builds and executes requests for operations under \{entityNameInPlural}\{entityId}\files
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilesRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/files", pathParameters)
+        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/files", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/files", rawUrl)
+        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/files", rawUrl)
         {
         }
         /// <summary>

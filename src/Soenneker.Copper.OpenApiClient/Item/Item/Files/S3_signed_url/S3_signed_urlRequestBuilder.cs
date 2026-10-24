@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Item.Item.Files.S3_signed_url
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{entityNameInPlural-id}\{entityId}\files\s3_signed_url
+    /// Builds and executes requests for operations under \{entityNameInPlural}\{entityId}\files\s3_signed_url
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class S3_signed_urlRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files.S3_signed_url
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public S3_signed_urlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/files/s3_signed_url", pathParameters)
+        public S3_signed_urlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/files/s3_signed_url", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files.S3_signed_url
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public S3_signed_urlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/files/s3_signed_url", rawUrl)
+        public S3_signed_urlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/files/s3_signed_url", rawUrl)
         {
         }
         /// <summary>

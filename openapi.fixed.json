@@ -4623,7 +4623,7 @@
         ]
       }
     },
-    "/leads/{exampleLeadconvertId}/convert": {
+    "/leads/{exampleLeadId}/convert": {
       "post": {
         "tags": [
           "2. Leads"
@@ -4633,7 +4633,7 @@
         "operationId": "ConvertaLead",
         "parameters": [
           {
-            "name": "exampleLeadconvertId",
+            "name": "exampleLeadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69837,7 +69837,7 @@
         ]
       }
     },
-    "/{entity}/{entityId}/related": {
+    "/{entityNameInPlural}/{entityId}/related": {
       "get": {
         "tags": [
           "Related Items"
@@ -69846,7 +69846,7 @@
         "operationId": "ViewAllRecordsRelatedToAnEntity",
         "parameters": [
           {
-            "name": "entity",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -70344,7 +70344,8 @@
               "Related Items"
             ]
           }
-        ]
+        ],
+        "x-original-trailing-slashes": 1
       },
       "post": {
         "tags": [
@@ -70355,7 +70356,7 @@
         "operationId": "RelateAnExistingRecordToAnEntity",
         "parameters": [
           {
-            "name": "entity",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -70879,7 +70880,7 @@
         "operationId": "RemoveRelationshipBetweenRecordAndEntity",
         "parameters": [
           {
-            "name": "entity",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -71395,7 +71396,7 @@
         ]
       }
     },
-    "/{entity}/{entityId}/related/{relatedEntityName}": {
+    "/{entityNameInPlural}/{entityId}/related/{relatedEntityName}": {
       "get": {
         "tags": [
           "Related Items"
@@ -71404,7 +71405,7 @@
         "operationId": "ViewAllRecordsOfAGivenEntityTypeRelatedToAnEntity",
         "parameters": [
           {
-            "name": "entity",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -71905,7 +71906,7 @@
         ]
       }
     },
-    "/{entityType}/{entityId}/files": {
+    "/{entityNameInPlural}/{entityId}/files": {
       "get": {
         "tags": [
           "File Upload"
@@ -71915,7 +71916,7 @@
         "operationId": "ListAttachedFilesOfAnEntityRecord",
         "parameters": [
           {
-            "name": "entityType",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -72354,7 +72355,7 @@
         "operationId": "Upload3RelateTheUploadedFileToASpecificEntity",
         "parameters": [
           {
-            "name": "entityType",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -72821,7 +72822,7 @@
         ]
       }
     },
-    "/{entity}/{entityId}/files/{fileId}": {
+    "/{entityNameInPlural}/{entityId}/files/{fileId}": {
       "get": {
         "tags": [
           "File Upload"
@@ -72831,7 +72832,7 @@
         "operationId": "GetMetadataOfASpecificAttachedFile",
         "parameters": [
           {
-            "name": "entity",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -73269,7 +73270,7 @@
         ]
       }
     },
-    "/{entityType}/{entityId}/files/s3_signed_url": {
+    "/{entityNameInPlural}/{entityId}/files/s3_signed_url": {
       "get": {
         "tags": [
           "File Upload"
@@ -73279,7 +73280,7 @@
         "operationId": "Upload1GetSignedS3Url",
         "parameters": [
           {
-            "name": "entityType",
+            "name": "entityNameInPlural",
             "in": "path",
             "required": true,
             "schema": {
@@ -76453,17 +76454,6 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "UpsertaLeadApplicationJsonMatchFieldValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "FetchAccountDetails200Response": {
         "type": "object",
         "properties": {
@@ -79091,15 +79081,7 @@
         }
       },
       "Upload2UploadYourFileToS3PlainRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
+        "type": "string"
       },
       "Upload2UploadYourFileToS3201XmlResponse": {
         "type": "string"
@@ -79213,21 +79195,12 @@
       "UpsertaLeadRequestMatchFieldValue": {
         "anyOf": [
           {
-            "$ref": "#/components/schemas/UpsertaLeadApplicationJsonMatchFieldValueBranch1"
+            "type": "string"
           },
           {
             "$ref": "#/components/schemas/UpsertaLeadRequestMatchFieldValueAnyOf2"
           }
-        ],
-        "properties": {
-          "value": {
-            "type": "string"
-          },
-          "custom_field_definition_id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
+        ]
       },
       "ListLeadsSearch200ResponseItemCustomFieldsItemValue": {
         "anyOf": [

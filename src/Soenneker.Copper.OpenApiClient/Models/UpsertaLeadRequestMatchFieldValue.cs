@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1"/>, <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpsertaLeadRequestMatchFieldValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1? UpsertaLeadApplicationJsonMatchFieldValueBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1 UpsertaLeadApplicationJsonMatchFieldValueBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,8 +38,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue();
-            result.UpsertaLeadApplicationJsonMatchFieldValueBranch1 = new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1();
-            result.UpsertaLeadRequestMatchFieldValueAnyOf2 = new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.UpsertaLeadRequestMatchFieldValueAnyOf2 = new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpsertaLeadApplicationJsonMatchFieldValueBranch1 != null || UpsertaLeadRequestMatchFieldValueAnyOf2 != null)
+            if(UpsertaLeadRequestMatchFieldValueAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpsertaLeadApplicationJsonMatchFieldValueBranch1, UpsertaLeadRequestMatchFieldValueAnyOf2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UpsertaLeadRequestMatchFieldValueAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadApplicationJsonMatchFieldValueBranch1>(null, UpsertaLeadApplicationJsonMatchFieldValueBranch1, UpsertaLeadRequestMatchFieldValueAnyOf2);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValueAnyOf2>(null, UpsertaLeadRequestMatchFieldValueAnyOf2);
+            }
         }
     }
 }

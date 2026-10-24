@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{entityNameInPlural-id}\{entityId}\related
+    /// Builds and executes requests for operations under \{entityNameInPlural}\{entityId}\related
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelatedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/related", pathParameters)
+        public RelatedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/related", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelatedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}/{entityId}/related", rawUrl)
+        public RelatedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}/{entityId}/related", rawUrl)
         {
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, (UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

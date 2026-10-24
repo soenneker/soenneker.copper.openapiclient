@@ -14,10 +14,10 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Leads.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{exampleLeadconvert-id}
+    /// Builds and executes requests for operations under \leads\{exampleLeadId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExampleLeadconvertItemRequestBuilder : BaseRequestBuilder
+    public partial class WithExampleLeadItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The activities property</summary>
         public global::Soenneker.Copper.OpenApiClient.Leads.Item.Activities.ActivitiesRequestBuilder Activities
@@ -30,19 +30,19 @@ namespace Soenneker.Copper.OpenApiClient.Leads.Item
             get => new global::Soenneker.Copper.OpenApiClient.Leads.Item.ConvertNamespace.ConvertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExampleLeadconvertItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{exampleLeadconvert%2Did}", pathParameters)
+        public WithExampleLeadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{exampleLeadId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExampleLeadconvertItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{exampleLeadconvert%2Did}", rawUrl)
+        public WithExampleLeadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{exampleLeadId}", rawUrl)
         {
         }
         /// <summary>
@@ -169,11 +169,11 @@ namespace Soenneker.Copper.OpenApiClient.Leads.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

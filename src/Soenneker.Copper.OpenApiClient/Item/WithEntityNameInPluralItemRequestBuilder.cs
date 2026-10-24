@@ -11,10 +11,10 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{entityNameInPlural-id}
+    /// Builds and executes requests for operations under \{entityNameInPlural}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EntityNameInPluralItemRequestBuilder : BaseRequestBuilder
+    public partial class WithEntityNameInPluralItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The search property</summary>
         public global::Soenneker.Copper.OpenApiClient.Item.Search.SearchRequestBuilder Search
@@ -34,19 +34,19 @@ namespace Soenneker.Copper.OpenApiClient.Item
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Item.EntityNameInPluralItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Item.WithEntityNameInPluralItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntityNameInPluralItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}", pathParameters)
+        public WithEntityNameInPluralItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Item.EntityNameInPluralItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Item.WithEntityNameInPluralItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntityNameInPluralItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural%2Did}", rawUrl)
+        public WithEntityNameInPluralItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{entityNameInPlural}", rawUrl)
         {
         }
     }

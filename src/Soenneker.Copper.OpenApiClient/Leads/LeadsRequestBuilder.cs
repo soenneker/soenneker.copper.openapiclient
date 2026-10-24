@@ -32,14 +32,14 @@ namespace Soenneker.Copper.OpenApiClient.Leads
         }
         /// <summary>Gets an item from the Soenneker.Copper.OpenApiClient.leads.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder"/></returns>
-        public global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder"/></returns>
+        public global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("exampleLeadconvert%2Did", position);
-                return new global::Soenneker.Copper.OpenApiClient.Leads.Item.ExampleLeadconvertItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("exampleLeadId", position);
+                return new global::Soenneker.Copper.OpenApiClient.Leads.Item.WithExampleLeadItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

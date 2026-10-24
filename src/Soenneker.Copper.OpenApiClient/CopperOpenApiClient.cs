@@ -145,14 +145,14 @@ namespace Soenneker.Copper.OpenApiClient
         }
         /// <summary>Gets an item from the Soenneker.Copper.OpenApiClient.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Item.EntityNameInPluralItemRequestBuilder"/></returns>
-        public global::Soenneker.Copper.OpenApiClient.Item.EntityNameInPluralItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Copper.OpenApiClient.Item.WithEntityNameInPluralItemRequestBuilder"/></returns>
+        public global::Soenneker.Copper.OpenApiClient.Item.WithEntityNameInPluralItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("entityNameInPlural%2Did", position);
-                return new global::Soenneker.Copper.OpenApiClient.Item.EntityNameInPluralItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("entityNameInPlural", position);
+                return new global::Soenneker.Copper.OpenApiClient.Item.WithEntityNameInPluralItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
