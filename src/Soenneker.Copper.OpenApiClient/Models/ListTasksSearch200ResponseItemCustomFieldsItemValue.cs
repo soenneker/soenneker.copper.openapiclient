@@ -42,7 +42,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             {
                 result.ListTasksSearch200ResponseItemCustomFieldsItemValueInt64 = listTasksSearch200ResponseItemCustomFieldsItemValueInt64Value;
             }
-            else if(parseNode.GetCollectionOfPrimitiveValues<long?>()?.AsList() is List<long?> int64Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<long?>()?.AsList() is List<long?> int64Value)
             {
                 result.Int64 = int64Value;
             }
