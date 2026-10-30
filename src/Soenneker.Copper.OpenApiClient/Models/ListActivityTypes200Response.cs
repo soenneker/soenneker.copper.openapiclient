@@ -17,8 +17,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
-            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("system") is null) { _explicitNullValueSystem = default!; _explicitNullProperties?.Remove("system"); }
+            else if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem>? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem>? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem>? _explicitNullValueSystem = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem> System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem> System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseSystemItem> _explicitNullValueSystem = default!;
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem>? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem>? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem>? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem> User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem> User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.ListActivityTypes200ResponseUserItem> _explicitNullValueUser = default!;
 #endif
         /// <summary>

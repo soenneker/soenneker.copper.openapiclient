@@ -17,8 +17,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_name") is { } nullNodeFieldName && nullNodeFieldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldName = null;
-            if (parseNode.GetChildNode("field_value") is { } nullNodeFieldValue && nullNodeFieldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldValue = null;
+            if (parseNode.GetChildNode("field_name") is null) { _explicitNullValueFieldName = default!; _explicitNullProperties?.Remove("field_name"); }
+            else if (parseNode.GetChildNode("field_name") is { } nullNodeFieldName && nullNodeFieldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldName = null;
+            if (parseNode.GetChildNode("field_value") is null) { _explicitNullValueFieldValue = default!; _explicitNullProperties?.Remove("field_value"); }
+            else if (parseNode.GetChildNode("field_value") is { } nullNodeFieldValue && nullNodeFieldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The field_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_name"); else _explicitNullProperties?.Remove("field_name"); } }
+        public string? FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; AdditionalData?.Remove("field_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_name"); else _explicitNullProperties?.Remove("field_name"); } }
         private string? _explicitNullValueFieldName = default!;
 #nullable restore
 #else
-        public string FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_name"); else _explicitNullProperties?.Remove("field_name"); } }
+        public string FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; AdditionalData?.Remove("field_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_name"); else _explicitNullProperties?.Remove("field_name"); } }
         private string _explicitNullValueFieldName = default!;
 #endif
         /// <summary>The field_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue? FieldValue { get => _explicitNullValueFieldValue; set { _explicitNullValueFieldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_value"); else _explicitNullProperties?.Remove("field_value"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue? FieldValue { get => _explicitNullValueFieldValue; set { _explicitNullValueFieldValue = value; AdditionalData?.Remove("field_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_value"); else _explicitNullProperties?.Remove("field_value"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue? _explicitNullValueFieldValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue FieldValue { get => _explicitNullValueFieldValue; set { _explicitNullValueFieldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_value"); else _explicitNullProperties?.Remove("field_value"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue FieldValue { get => _explicitNullValueFieldValue; set { _explicitNullValueFieldValue = value; AdditionalData?.Remove("field_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_value"); else _explicitNullProperties?.Remove("field_value"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatchFieldValue _explicitNullValueFieldValue = default!;
 #endif
         /// <summary>

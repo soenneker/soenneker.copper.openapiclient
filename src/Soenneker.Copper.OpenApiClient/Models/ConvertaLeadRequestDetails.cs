@@ -17,8 +17,10 @@ namespace Soenneker.Copper.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("opportunity") is { } nullNodeOpportunity && nullNodeOpportunity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opportunity = null;
-            if (parseNode.GetChildNode("person") is { } nullNodePerson && nullNodePerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Person = null;
+            if (parseNode.GetChildNode("opportunity") is null) { _explicitNullValueOpportunity = default!; _explicitNullProperties?.Remove("opportunity"); }
+            else if (parseNode.GetChildNode("opportunity") is { } nullNodeOpportunity && nullNodeOpportunity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opportunity = null;
+            if (parseNode.GetChildNode("person") is null) { _explicitNullValuePerson = default!; _explicitNullProperties?.Remove("person"); }
+            else if (parseNode.GetChildNode("person") is { } nullNodePerson && nullNodePerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Person = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <summary>The opportunity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; AdditionalData?.Remove("opportunity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? _explicitNullValueOpportunity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; AdditionalData?.Remove("opportunity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity _explicitNullValueOpportunity = default!;
 #endif
         /// <summary>The person property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; AdditionalData?.Remove("person"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? _explicitNullValuePerson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; AdditionalData?.Remove("person"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
         private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson _explicitNullValuePerson = default!;
 #endif
         /// <summary>

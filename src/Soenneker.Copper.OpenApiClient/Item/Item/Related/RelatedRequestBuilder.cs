@@ -121,7 +121,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.copper.com/developer_api/v1", "/{entityNameInPlural}/{entityId}/related", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -141,7 +141,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, (UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve((UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), RequestAdapter.BaseUrl, "https://api.copper.com/developer_api/v1", "/{entityNameInPlural}/{entityId}/related/", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -162,7 +162,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.copper.com/developer_api/v1", "/{entityNameInPlural}/{entityId}/related", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

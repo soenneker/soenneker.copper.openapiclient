@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Copper.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="long"/>, <see cref="string"/>, List&lt;long&gt;
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="string"/>, List&lt;long&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValue : IComposedTypeWrapper, IParsable
@@ -30,8 +30,6 @@ namespace Soenneker.Copper.OpenApiClient.Models
 #else
         public List<long?> Int64 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="long"/></summary>
-        public long? SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64 { get; set; }
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,10 +55,6 @@ namespace Soenneker.Copper.OpenApiClient.Models
             {
                 result.Double = doubleValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong) && parseNode.GetLongValue() is long searchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64Value)
-            {
-                result.SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64 = searchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64Value;
-            }
             else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
             {
                 result.String = stringValue;
@@ -71,7 +65,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.Boolean == null && result.Double == null && result.SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64 == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            if (result.Boolean == null && result.Double == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -80,6 +74,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -89,7 +85,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (Boolean == null && Double == null && SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (Boolean == null && Double == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Boolean != null)
@@ -99,10 +95,6 @@ return result;
             else if(Double != null)
             {
                 writer.WriteDoubleValue(null, Double);
-            }
-            else if(SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64 != null)
-            {
-                writer.WriteLongValue(null, SearchEntityLeadsPeopleEtcByCustomField200ResponseItemCustomFieldsItemValueInt64);
             }
             else if(String != null)
             {

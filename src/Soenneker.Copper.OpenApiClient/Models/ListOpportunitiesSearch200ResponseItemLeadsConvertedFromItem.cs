@@ -17,17 +17,19 @@ namespace Soenneker.Copper.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("converted_timestamp") is { } nullNodeConvertedTimestamp && nullNodeConvertedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedTimestamp = null;
-            if (parseNode.GetChildNode("lead_id") is { } nullNodeLeadId && nullNodeLeadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadId = null;
+            if (parseNode.GetChildNode("converted_timestamp") is null) { _explicitNullValueConvertedTimestamp = default!; _explicitNullProperties?.Remove("converted_timestamp"); }
+            else if (parseNode.GetChildNode("converted_timestamp") is { } nullNodeConvertedTimestamp && nullNodeConvertedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedTimestamp = null;
+            if (parseNode.GetChildNode("lead_id") is null) { _explicitNullValueLeadId = default!; _explicitNullProperties?.Remove("lead_id"); }
+            else if (parseNode.GetChildNode("lead_id") is { } nullNodeLeadId && nullNodeLeadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The converted_timestamp property</summary>
-        public long? ConvertedTimestamp { get => _explicitNullValueConvertedTimestamp; set { _explicitNullValueConvertedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("converted_timestamp"); else _explicitNullProperties?.Remove("converted_timestamp"); } }
+        public long? ConvertedTimestamp { get => _explicitNullValueConvertedTimestamp; set { _explicitNullValueConvertedTimestamp = value; AdditionalData?.Remove("converted_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("converted_timestamp"); else _explicitNullProperties?.Remove("converted_timestamp"); } }
         private long? _explicitNullValueConvertedTimestamp = default!;
         /// <summary>The lead_id property</summary>
-        public long? LeadId { get => _explicitNullValueLeadId; set { _explicitNullValueLeadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_id"); else _explicitNullProperties?.Remove("lead_id"); } }
+        public long? LeadId { get => _explicitNullValueLeadId; set { _explicitNullValueLeadId = value; AdditionalData?.Remove("lead_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_id"); else _explicitNullProperties?.Remove("lead_id"); } }
         private long? _explicitNullValueLeadId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem"/> and sets the default values.

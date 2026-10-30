@@ -17,17 +17,18 @@ namespace Soenneker.Copper.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activity_types") is { } nullNodeActivityTypes && nullNodeActivityTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityTypes = null;
+            if (parseNode.GetChildNode("activity_types") is null) { _explicitNullValueActivityTypes = default!; _explicitNullProperties?.Remove("activity_types"); }
+            else if (parseNode.GetChildNode("activity_types") is { } nullNodeActivityTypes && nullNodeActivityTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityTypes = null;
         }
 
         /// <summary>The activity_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem>? ActivityTypes { get => _explicitNullValueActivityTypes; set { _explicitNullValueActivityTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_types"); else _explicitNullProperties?.Remove("activity_types"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem>? ActivityTypes { get => _explicitNullValueActivityTypes; set { _explicitNullValueActivityTypes = value; AdditionalData?.Remove("activity_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_types"); else _explicitNullProperties?.Remove("activity_types"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem>? _explicitNullValueActivityTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem> ActivityTypes { get => _explicitNullValueActivityTypes; set { _explicitNullValueActivityTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_types"); else _explicitNullProperties?.Remove("activity_types"); } }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem> ActivityTypes { get => _explicitNullValueActivityTypes; set { _explicitNullValueActivityTypes = value; AdditionalData?.Remove("activity_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_types"); else _explicitNullProperties?.Remove("activity_types"); } }
         private List<global::Soenneker.Copper.OpenApiClient.Models.SeeACompanySActivitiesRequestActivityTypesItem> _explicitNullValueActivityTypes = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
