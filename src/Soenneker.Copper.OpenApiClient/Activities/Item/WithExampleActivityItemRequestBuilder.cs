@@ -51,7 +51,7 @@ namespace Soenneker.Copper.OpenApiClient.Activities.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.DeleteAnActivity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.DeleteAnActivity200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.DeleteAnActivity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.DeleteAnActivity200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch an Activity by ID
@@ -69,7 +69,7 @@ namespace Soenneker.Copper.OpenApiClient.Activities.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.FetchAnActivityById200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.FetchAnActivityById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.FetchAnActivityById200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.FetchAnActivityById200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This request permanently removes a record from your Copper account.

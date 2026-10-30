@@ -11,92 +11,138 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListCompaniesSearch200ResponseItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("assignee_id") is { } nullNodeAssigneeId && nullNodeAssigneeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssigneeId = null;
+            if (parseNode.GetChildNode("contact_type_id") is { } nullNodeContactTypeId && nullNodeContactTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactTypeId = null;
+            if (parseNode.GetChildNode("custom_fields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
+            if (parseNode.GetChildNode("date_created") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("date_modified") is { } nullNodeDateModified && nullNodeDateModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateModified = null;
+            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("email_domain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interaction_count") is { } nullNodeInteractionCount && nullNodeInteractionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionCount = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("socials") is { } nullNodeSocials && nullNodeSocials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Socials = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("websites") is { } nullNodeWebsites && nullNodeWebsites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Websites = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress? Address { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress Address { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The assignee_id property</summary>
-        public long? AssigneeId { get; set; }
+        public long? AssigneeId { get => _explicitNullValueAssigneeId; set { _explicitNullValueAssigneeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignee_id"); else _explicitNullProperties?.Remove("assignee_id"); } }
+        private long? _explicitNullValueAssigneeId = default!;
         /// <summary>The contact_type_id property</summary>
-        public long? ContactTypeId { get; set; }
+        public long? ContactTypeId { get => _explicitNullValueContactTypeId; set { _explicitNullValueContactTypeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_type_id"); else _explicitNullProperties?.Remove("contact_type_id"); } }
+        private long? _explicitNullValueContactTypeId = default!;
         /// <summary>The custom_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem>? CustomFields { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem>? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem>? _explicitNullValueCustomFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem> CustomFields { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem> CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_fields"); else _explicitNullProperties?.Remove("custom_fields"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemCustomFieldsItem> _explicitNullValueCustomFields = default!;
 #endif
         /// <summary>The date_created property</summary>
-        public long? DateCreated { get; set; }
+        public long? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_created"); else _explicitNullProperties?.Remove("date_created"); } }
+        private long? _explicitNullValueDateCreated = default!;
         /// <summary>The date_modified property</summary>
-        public long? DateModified { get; set; }
+        public long? DateModified { get => _explicitNullValueDateModified; set { _explicitNullValueDateModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_modified"); else _explicitNullProperties?.Remove("date_modified"); } }
+        private long? _explicitNullValueDateModified = default!;
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public string? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private string? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public string Details { get; set; }
+        public string Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private string _explicitNullValueDetails = default!;
 #endif
         /// <summary>The email_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get; set; }
+        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_domain"); else _explicitNullProperties?.Remove("email_domain"); } }
+        private string? _explicitNullValueEmailDomain = default!;
 #nullable restore
 #else
-        public string EmailDomain { get; set; }
+        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_domain"); else _explicitNullProperties?.Remove("email_domain"); } }
+        private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>The id property</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>The interaction_count property</summary>
-        public long? InteractionCount { get; set; }
+        public long? InteractionCount { get => _explicitNullValueInteractionCount; set { _explicitNullValueInteractionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interaction_count"); else _explicitNullProperties?.Remove("interaction_count"); } }
+        private long? _explicitNullValueInteractionCount = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The phone_numbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem> PhoneNumbers { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemPhoneNumbersItem> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>The socials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>? Socials { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>? Socials { get => _explicitNullValueSocials; set { _explicitNullValueSocials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socials"); else _explicitNullProperties?.Remove("socials"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>? _explicitNullValueSocials = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem> Socials { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem> Socials { get => _explicitNullValueSocials; set { _explicitNullValueSocials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("socials"); else _explicitNullProperties?.Remove("socials"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem> _explicitNullValueSocials = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The websites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>? Websites { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>? Websites { get => _explicitNullValueWebsites; set { _explicitNullValueWebsites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websites"); else _explicitNullProperties?.Remove("websites"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>? _explicitNullValueWebsites = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem> Websites { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem> Websites { get => _explicitNullValueWebsites; set { _explicitNullValueWebsites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websites"); else _explicitNullProperties?.Remove("websites"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem> _explicitNullValueWebsites = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItem"/> and sets the default values.
@@ -113,7 +159,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +208,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemSocialsItem>("socials", Socials);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.ListCompaniesSearch200ResponseItemWebsitesItem>("websites", Websites);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

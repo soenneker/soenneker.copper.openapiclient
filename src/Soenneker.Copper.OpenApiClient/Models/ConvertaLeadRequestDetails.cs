@@ -11,24 +11,37 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConvertaLeadRequestDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("opportunity") is { } nullNodeOpportunity && nullNodeOpportunity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opportunity = null;
+            if (parseNode.GetChildNode("person") is { } nullNodePerson && nullNodePerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Person = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The opportunity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? Opportunity { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity? _explicitNullValueOpportunity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity Opportunity { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity Opportunity { get => _explicitNullValueOpportunity; set { _explicitNullValueOpportunity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunity"); else _explicitNullProperties?.Remove("opportunity"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity _explicitNullValueOpportunity = default!;
 #endif
         /// <summary>The person property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? Person { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson? _explicitNullValuePerson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson Person { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson Person { get => _explicitNullValuePerson; set { _explicitNullValuePerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person"); else _explicitNullProperties?.Remove("person"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson _explicitNullValuePerson = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetails"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsOpportunity>("opportunity", Opportunity);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ConvertaLeadRequestDetailsPerson>("person", Person);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

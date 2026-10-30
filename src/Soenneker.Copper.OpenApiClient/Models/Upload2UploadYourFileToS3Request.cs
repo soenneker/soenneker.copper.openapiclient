@@ -11,64 +11,92 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Upload2UploadYourFileToS3Request : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acl") is { } nullNodeAcl && nullNodeAcl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acl = null;
+            if (parseNode.GetChildNode("AWSAccessKeyId") is { } nullNodeAWSAccessKeyId && nullNodeAWSAccessKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AWSAccessKeyId = null;
+            if (parseNode.GetChildNode("file") is { } nullNodeFile && nullNodeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) File = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("success_action_status") is { } nullNodeSuccessActionStatus && nullNodeSuccessActionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessActionStatus = null;
+        }
+
         /// <summary>The acl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Acl { get; set; }
+        public string? Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
+        private string? _explicitNullValueAcl = default!;
 #nullable restore
 #else
-        public string Acl { get; set; }
+        public string Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
+        private string _explicitNullValueAcl = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AWSAccessKeyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AWSAccessKeyId { get; set; }
+        public string? AWSAccessKeyId { get => _explicitNullValueAWSAccessKeyId; set { _explicitNullValueAWSAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AWSAccessKeyId"); else _explicitNullProperties?.Remove("AWSAccessKeyId"); } }
+        private string? _explicitNullValueAWSAccessKeyId = default!;
 #nullable restore
 #else
-        public string AWSAccessKeyId { get; set; }
+        public string AWSAccessKeyId { get => _explicitNullValueAWSAccessKeyId; set { _explicitNullValueAWSAccessKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AWSAccessKeyId"); else _explicitNullProperties?.Remove("AWSAccessKeyId"); } }
+        private string _explicitNullValueAWSAccessKeyId = default!;
 #endif
         /// <summary>The file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? File { get; set; }
+        public string? File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private string? _explicitNullValueFile = default!;
 #nullable restore
 #else
-        public string File { get; set; }
+        public string File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private string _explicitNullValueFile = default!;
 #endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Policy { get; set; }
+        public string? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private string? _explicitNullValuePolicy = default!;
 #nullable restore
 #else
-        public string Policy { get; set; }
+        public string Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private string _explicitNullValuePolicy = default!;
 #endif
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string _explicitNullValueSignature = default!;
 #endif
         /// <summary>The success_action_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuccessActionStatus { get; set; }
+        public string? SuccessActionStatus { get => _explicitNullValueSuccessActionStatus; set { _explicitNullValueSuccessActionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_action_status"); else _explicitNullProperties?.Remove("success_action_status"); } }
+        private string? _explicitNullValueSuccessActionStatus = default!;
 #nullable restore
 #else
-        public string SuccessActionStatus { get; set; }
+        public string SuccessActionStatus { get => _explicitNullValueSuccessActionStatus; set { _explicitNullValueSuccessActionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_action_status"); else _explicitNullProperties?.Remove("success_action_status"); } }
+        private string _explicitNullValueSuccessActionStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.Upload2UploadYourFileToS3Request(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             writer.WriteStringValue("policy", Policy);
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("success_action_status", SuccessActionStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpsertaLeadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("match") is { } nullNodeMatch && nullNodeMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Match = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The match property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch? Match { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch? Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch? _explicitNullValueMatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch Match { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch _explicitNullValueMatch = default!;
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties? Properties { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties Properties { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties _explicitNullValueProperties = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestMatch>("match", Match);
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.UpsertaLeadRequestProperties>("properties", Properties);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

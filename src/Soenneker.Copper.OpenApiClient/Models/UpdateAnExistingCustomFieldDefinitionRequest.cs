@@ -11,24 +11,37 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateAnExistingCustomFieldDefinitionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_on") is { } nullNodeAvailableOn && nullNodeAvailableOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableOn = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The available_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableOn { get; set; }
+        public List<string>? AvailableOn { get => _explicitNullValueAvailableOn; set { _explicitNullValueAvailableOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_on"); else _explicitNullProperties?.Remove("available_on"); } }
+        private List<string>? _explicitNullValueAvailableOn = default!;
 #nullable restore
 #else
-        public List<string> AvailableOn { get; set; }
+        public List<string> AvailableOn { get => _explicitNullValueAvailableOn; set { _explicitNullValueAvailableOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_on"); else _explicitNullProperties?.Remove("available_on"); } }
+        private List<string> _explicitNullValueAvailableOn = default!;
 #endif
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem>? Options { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem>? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem>? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem> Options { get; set; }
+        public List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem> Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private List<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem> _explicitNullValueOptions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("available_on", AvailableOn);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinitionRequestOptionsItem>("options", Options);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

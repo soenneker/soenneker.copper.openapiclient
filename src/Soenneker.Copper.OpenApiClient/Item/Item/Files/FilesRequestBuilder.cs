@@ -68,7 +68,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListAttachedFilesOfAnEntityRecord200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListAttachedFilesOfAnEntityRecord200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListAttachedFilesOfAnEntityRecord200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListAttachedFilesOfAnEntityRecord200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Files
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.Upload3RelateTheUploadedFileToASpecificEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.Upload3RelateTheUploadedFileToASpecificEntity200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.Upload3RelateTheUploadedFileToASpecificEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.Upload3RelateTheUploadedFileToASpecificEntity200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API endpoint lists all the attached files for a given entity type and id,where {{entity_type}} and {{entity_id}} are replaced with the following:|           Field           |    Type     |                                    Details                                    | Default || ------------------------- | ----------- | ----------------------------------------------------------------------------- | ------- || entity_type*              | string      | Must be one of: &quot;leads&quot;, &quot;people&quot;, &quot;opportunities&quot;, &quot;companies&quot;, &quot;projects&quot;   |         || entity_id*                | number      | ID of the entity record                                                       |         || \* indicates a required field ||||

@@ -11,50 +11,74 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Upload1GetSignedS3Url200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("removed") is { } nullNodeRemoved && nullNodeRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Removed = null;
+            if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
+            if (parseNode.GetChildNode("sample_curl") is { } nullNodeSampleCurl && nullNodeSampleCurl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleCurl = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody? Body { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody Body { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody _explicitNullValueBody = default!;
 #endif
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public string Method { get; set; }
+        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string _explicitNullValueMethod = default!;
 #endif
         /// <summary>The removed property</summary>
-        public bool? Removed { get; set; }
+        public bool? Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
+        private bool? _explicitNullValueRemoved = default!;
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource? Resource { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource? _explicitNullValueResource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource Resource { get; set; }
+        public global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource _explicitNullValueResource = default!;
 #endif
         /// <summary>The sample_curl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SampleCurl { get; set; }
+        public string? SampleCurl { get => _explicitNullValueSampleCurl; set { _explicitNullValueSampleCurl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_curl"); else _explicitNullProperties?.Remove("sample_curl"); } }
+        private string? _explicitNullValueSampleCurl = default!;
 #nullable restore
 #else
-        public string SampleCurl { get; set; }
+        public string SampleCurl { get => _explicitNullValueSampleCurl; set { _explicitNullValueSampleCurl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_curl"); else _explicitNullProperties?.Remove("sample_curl"); } }
+        private string _explicitNullValueSampleCurl = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200Response"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseResource>("resource", Resource);
             writer.WriteStringValue("sample_curl", SampleCurl);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

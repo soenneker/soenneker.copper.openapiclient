@@ -62,7 +62,7 @@ namespace Soenneker.Copper.OpenApiClient.Related_links
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListTheConnectionsOnSpecifiedEntity200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListTheConnectionsOnSpecifiedEntity200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListTheConnectionsOnSpecifiedEntity200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListTheConnectionsOnSpecifiedEntity200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Copper.OpenApiClient.Related_links
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.CreateAConnection200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.CreateAConnection200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.CreateAConnection200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.CreateAConnection200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve already existing connections in the connect field, use the list the connections API.

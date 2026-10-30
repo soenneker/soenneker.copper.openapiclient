@@ -11,13 +11,24 @@ namespace Soenneker.Copper.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("converted_timestamp") is { } nullNodeConvertedTimestamp && nullNodeConvertedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedTimestamp = null;
+            if (parseNode.GetChildNode("lead_id") is { } nullNodeLeadId && nullNodeLeadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The converted_timestamp property</summary>
-        public long? ConvertedTimestamp { get; set; }
+        public long? ConvertedTimestamp { get => _explicitNullValueConvertedTimestamp; set { _explicitNullValueConvertedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("converted_timestamp"); else _explicitNullProperties?.Remove("converted_timestamp"); } }
+        private long? _explicitNullValueConvertedTimestamp = default!;
         /// <summary>The lead_id property</summary>
-        public long? LeadId { get; set; }
+        public long? LeadId { get => _explicitNullValueLeadId; set { _explicitNullValueLeadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_id"); else _explicitNullProperties?.Remove("lead_id"); } }
+        private long? _explicitNullValueLeadId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Copper.OpenApiClient.Models.ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         public static global::Soenneker.Copper.OpenApiClient.Models.ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Copper.OpenApiClient.Models.ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Copper.OpenApiClient.Models.ListOpportunitiesSearch200ResponseItemLeadsConvertedFromItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("converted_timestamp", ConvertedTimestamp);
             writer.WriteLongValue("lead_id", LeadId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

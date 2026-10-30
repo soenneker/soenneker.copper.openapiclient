@@ -55,7 +55,7 @@ namespace Soenneker.Copper.OpenApiClient.Pipeline_stages
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ListPipelineStages200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

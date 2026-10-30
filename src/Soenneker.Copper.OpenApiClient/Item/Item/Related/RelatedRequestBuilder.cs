@@ -64,7 +64,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.RemoveRelationshipBetweenRecordAndEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.RemoveRelationshipBetweenRecordAndEntity200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.RemoveRelationshipBetweenRecordAndEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.RemoveRelationshipBetweenRecordAndEntity200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// View all records related to an Entity
@@ -82,7 +82,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ViewAllRecordsRelatedToAnEntity200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ViewAllRecordsRelatedToAnEntity200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Copper.OpenApiClient.Models.ViewAllRecordsRelatedToAnEntity200ResponseItem>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.ViewAllRecordsRelatedToAnEntity200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Soenneker.Copper.OpenApiClient.Item.Item.Related
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.RelateAnExistingRecordToAnEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.RelateAnExistingRecordToAnEntity200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.RelateAnExistingRecordToAnEntity200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.RelateAnExistingRecordToAnEntity200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removing the relationship does not cause any of the records involved to be deleted from the system.

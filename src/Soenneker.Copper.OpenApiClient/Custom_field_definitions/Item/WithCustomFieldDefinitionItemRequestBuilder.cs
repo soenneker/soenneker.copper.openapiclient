@@ -51,7 +51,7 @@ namespace Soenneker.Copper.OpenApiClient.Custom_field_definitions.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.DeleteACustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.DeleteACustomFieldDefinition200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.DeleteACustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.DeleteACustomFieldDefinition200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch a Custom Field Definition
@@ -69,7 +69,7 @@ namespace Soenneker.Copper.OpenApiClient.Custom_field_definitions.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.FetchACustomFieldDefinition200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// | Field                 | Type          | Details | Default || --------------------- | ------------- | ----------------------- | ---------------------- || name*              | string | Name of the Custom Field Definition                     |                      || data_type*                  | string | One of the following strings: &quot;Checkbox&quot;, &quot;Currency&quot;, “Date&quot;, &quot;Dropdown&quot;, &quot;Float&quot;, &quot;MultiSelect&quot;, &quot;Percentage&quot;, “String&quot;, &quot;Text&quot;, &quot;URL&quot; |                      || available_on              | string array       | List of strings containing one or more of the following: “lead”, “person”, “opportunity”, “company”, &quot;project&quot;, &quot;task&quot;                      |                      || options          | integer array       | Array of options for Dropdown and MultiSelect fields.  A minimum of one option is required for Dropdown and a minimum of 2 options is required for MultiSelect                      |                      || currency            | string | 3-letter country code (e.g., &quot;USD&quot;, &quot;CAD&quot;)                     |                      ||\* indicates a required field| | |
@@ -89,7 +89,7 @@ namespace Soenneker.Copper.OpenApiClient.Custom_field_definitions.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200Response>(requestInfo, global::Soenneker.Copper.OpenApiClient.Models.UpdateAnExistingCustomFieldDefinition200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a Custom Field Definition
