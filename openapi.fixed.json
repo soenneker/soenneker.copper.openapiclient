@@ -74156,6 +74156,105 @@
           },
           "default": {
             "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          },
+          "200": {
+            "description": "Created",
+            "headers": {
+              "x-amz-id-2": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "5\u002BuNxjmQa3k78sRSE29bRDlxEoyqwgbX7fidL3oZaNGbdha3Dnx1l/6KNnwBw\u002BUZdbTv6GvFLNI="
+                  }
+                }
+              },
+              "x-amz-request-id": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "8C0EAD3313E4FB4B"
+                  }
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "Mon, 10 Jun 2019 21:52:51 GMT"
+                  }
+                }
+              },
+              "x-amz-server-side-encryption": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AES256"
+                  }
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "\u002232ffc747a3857844479b6d21a6e5d46a\u0022"
+                  }
+                }
+              },
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "https://ali-userassets-production.s3.amazonaws.com/temp_uploads%2Ff0317718-9b56-4d28-bda4-985af6b75f56%2Fb0c5afe5-3d87-495d-ae58-760fcafbadec"
+                  }
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "416"
+                  }
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "example1": {
+                    "value": "AmazonS3"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Upload2UploadYourFileToS3201XmlResponse"
+                },
+                "examples": {
+                  "Upload_2__Upload_your_file_to_S3": {
+                    "summary": "Upload 2: Upload your file to S3",
+                    "value": "\u003C?xml version=\u00221.0\u0022 encoding=\u0022UTF-8\u0022?\u003E\n\u003CPostResponse\u003E\n    \u003CLocation\u003Ehttps://ali-userassets-production.s3.amazonaws.com/temp_uploads%2Ff0317718-9b56-4d28-bda4-985af6b75f56%2Fb0c5afe5-3d87-495d-ae58-760fcafbadec\u003C/Location\u003E\n    \u003CBucket\u003Eali-userassets-production\u003C/Bucket\u003E\n    \u003CKey\u003Etemp_uploads/f0317718-9b56-4d28-bda4-985af6b75f56/b0c5afe5-3d87-495d-ae58-760fcafbadec\u003C/Key\u003E\n    \u003CETag\u003E\u002232ffc747a3857844479b6d21a6e5d46a\u0022\u003C/ETag\u003E\n\u003C/PostResponse\u003E"
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
