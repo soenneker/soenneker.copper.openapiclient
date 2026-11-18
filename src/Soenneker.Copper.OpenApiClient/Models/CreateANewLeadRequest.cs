@@ -109,7 +109,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestAddress.CreateFromDiscriminatorValue); } },
                 { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestCustomFieldsItem>(global::Soenneker.Copper.OpenApiClient.Models.CreateANewLeadRequestCustomFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },

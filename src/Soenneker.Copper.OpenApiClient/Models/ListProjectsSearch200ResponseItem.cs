@@ -206,7 +206,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress>(global::Soenneker.Copper.OpenApiClient.Models.ListProjectsSearch200ResponseItemAddress.CreateFromDiscriminatorValue); } },
                 { "assignee_id", n => { AssigneeId = n.GetLongValue(); } },

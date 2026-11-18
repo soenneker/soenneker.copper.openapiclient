@@ -109,7 +109,7 @@ namespace Soenneker.Copper.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody>(global::Soenneker.Copper.OpenApiClient.Models.Upload1GetSignedS3Url200ResponseBody.CreateFromDiscriminatorValue); } },
                 { "method", n => { Method = n.GetStringValue(); } },
